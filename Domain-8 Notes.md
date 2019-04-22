@@ -8,4 +8,4 @@
 
 [link](https://)
 
-![image](waterfall model.jpg)
+![image](waterfallmodel.jpg)
