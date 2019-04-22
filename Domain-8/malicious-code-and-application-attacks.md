@@ -139,6 +139,10 @@ At regular intervals, the team reflects on how to become more effective, then tu
 
 > For Memorization: To help you remember the initial letters of each of the 10 level names of the SW-CMM and IDEAL models (II DR ED AM LO), imagine yourself sitting on the couch in a psychiatrist’s office saying, “I…I, Dr. Ed, am lo(w).” If you can remember that phrase, then you can extract the 10 initial letters of the level names. If you write the letters out into two columns, you can reconstruct the level names in order of the two systems. The left column is the IDEAL model, and the right represents the levels of the SW-CMM. 
 
-Initiating | Initiating |
---- | --- | ---
-Diagnosing | Repeatable |
+IDEAL | SW-CMM
+--- | ---
+Initiating | Initiating
+Diagnosing | Repeatable
+Establishing | Defined
+Acting | Managed
+Learning | Optimized
