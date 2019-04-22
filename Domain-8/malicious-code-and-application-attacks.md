@@ -119,7 +119,7 @@
 <!-- /wp:list -->
 
 <!-- wp:image {"id":98,"width":450,"height":401} -->
-<figure class="wp-block-image is-resized"><img src="https://www.sudoengineer.com/wp-content/uploads/2019/04/waterfall-model-1.jpg" alt="" class="wp-image-98" width="450" height="401"/></figure>
+<figure class="wp-block-image is-resized"><img src="waterfallmodel.jpg" alt="" class="wp-image-98" width="450" height="401"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -131,7 +131,7 @@
 <!-- /wp:list -->
 
 <!-- wp:image {"id":102} -->
-<figure class="wp-block-image"><img src="https://www.sudoengineer.com/wp-content/uploads/2019/04/Spiral-Model.jpg" alt="" class="wp-image-102"/></figure>
+<figure class="wp-block-image"><img src="SpiralModel.jpg" alt="" class="wp-image-102"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
