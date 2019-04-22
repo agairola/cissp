@@ -86,9 +86,42 @@
 
 <p><strong>Agile Software Development</strong></p>
 
+* One of the most propular development models of modern times, which helps developers to develop new functionality that meets those needs in an iterative fashion. Many variants are available, including Scrum, Agile Unified Process (AUP), the Dynamic Systems Development Model (DSDM), and Extreme Programming (XP).
+
+* Values:
+  * **Individuals and interactions** over processes and tools
+  * **Working software** over comprehensive documentation
+  * **Customer collaboration** over contract negotiation
+  * **Responding to change** over following a plan
+
+* [Principles](http://agilemanifesto.org/principles.html):
+```
+Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
+
+Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.
+
+Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+
+Business people and developers must work together daily throughout the project.
+
+Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
+
+The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
+
+Working software is the primary measure of progress.
+
+Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+
+Continuous attention to technical excellence and good design enhances agility.
+
+Simplicity--the art of maximizing the amount of work not done--is essential.
+
+The best architectures, requirements, and designs emerge from self-organizing teams.
+
+At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
+```
+
 <p><strong>Software Capability Maturity Model</strong></p>
-
-
 
 <p><strong>IDEAL Model</strong></p>
 
