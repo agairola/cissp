@@ -123,5 +123,11 @@ At regular intervals, the team reflects on how to become more effective, then tu
 
 <p><strong>Software Capability Maturity Model</strong></p>
 
+* Capability Maturity Model for Software, also known as the Software Capability Maturity Model (abbreviated as SW-CMM, CMM, or SCMM)
+* Mantra: maturity phases in sequential fashion.
+* The idea behind the SW-CMM is that the quality of software depends on the quality of its development process.
+* Stages:
+![alt text](SW-CMM.png)
+
 <p><strong>IDEAL Model</strong></p>
 
