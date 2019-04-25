@@ -1,14 +1,12 @@
 Table of Contents
 =================
-```
-```
-         * [What is the problem we are trying to solve](#what-is-the-problem-we-are-trying-to-solve)
-         * [Software Development](#software-development)
-            * [Programing Language](#programing-language)
-            * [Assurance](#assurance)
-            * [Avoiding and Mitigating System Failure](#avoiding-and-mitigating-system-failure)
-            * [Systems Development Lifecycle](#systems-development-lifecycle)
-            * [Lifecycle Models](#lifecycle-models)
+* [What is the problem we are trying to solve](#what-is-the-problem-we-are-trying-to-solve)
+	* [Software Development](#software-development)
+    * [Programing Language](#programing-language)
+    * [Assurance](#assurance)
+    * [Avoiding and Mitigating System Failure](#avoiding-and-mitigating-system-failure)
+    * [Systems Development Lifecycle](#systems-development-lifecycle)
+    * [Lifecycle Models](#lifecycle-models)
 
 <h3>What is the problem we are trying to solve</h3>
 
@@ -159,13 +157,16 @@ Establishing | Defined
 Acting | Managed
 Learning | Optimized
 
-##### Gantt Charts and PERT
+#### Gantt Charts and PERT
 
 * Gantt Charts is a bar chart that shows the interrelationships over time between projects and schedules.
 * It provides a graphical illustration of a schedule that helps to plan, coordinate, and track specific tasks in a project
 
 ![alt text](gantt.jpg)
 
-* Program Evaluation Review Technique (PERT) is a project-scheduling tool used to judge the size of a software product in development and calculate the standard deviation (SD) for risk assessment. 
+* Program Evaluation Review Technique (**PERT**) is a project-scheduling tool used to judge the size of a software product in development and calculate the standard deviation (SD) for risk assessment. 
 * PERT is used to direct improvements to project management and software coding in order to produce more efficient software. 
+
+
+#### Change and Configuration Management
 
