@@ -237,3 +237,45 @@ Learning | Optimized
 
 #### Code Repositories
 
+* Code repositories from high level is a collaborative tool.
+
+* **Examples:** GitHub, Bitbucket, and SourceForge
+
+* Features included version control, bug tracking, web hosting, release management, and communications functions.
+
+* **Security**: Repository owners must carefully design access controls to only allow appropriate users read and/or write access.
+
+* **Example of a breach:** AWS API Keys getting published on Github etc
+
+#### Service Level Agreements
+
+* Providing services to internal and/or external customers maintain an appropriate level of service agreed on by both the service provider and the vendor.
+
+* Service-level agreements can have financial clauses, **for example**, if a critical circuit is down for more than 15 minutes, the service provider might agree to waive all charges on that circuit for one week.
+
+#### Software Acquisition 
+
+From security perspective:
+
+  * Security professionals must understand the proper configuration of that software to meet security objectives. 
+  * Keep track of security bulletins and patches that correct newly discovered vulnerabilities.
+  * In SaaS environments, security professionals should monitoring the vendor’s security via audits, assessments, vulnerability scans, and other measures designed to verify that the vendor maintains proper controls.
+
+--------------
+# Complete this 
+
+### Establishing Databases and Data Warehousing
+
+#### Database Management System Architecture
+
+**Hierarchical and Distributed Databases**
+
+**Relational Databases**
+
+**DATABASE TRANSACTIONS**
+
+#### Security for multilevel databases
+
+#### Open Database Connectivity 
+
+
