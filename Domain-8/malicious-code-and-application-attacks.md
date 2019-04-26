@@ -170,3 +170,70 @@ Learning | Optimized
 
 #### Change and Configuration Management
 
+* Organization must put a procedure in place to manage changes in an organized fashion. 
+
+* CThose changes should then be logged to a central repository to support future auditing, investigation, and analysis requirements.
+
+* CHANGE MANAGEMENT AS A SECURITY TOOL: **Example situation**: System administrators receive an alert only if the security team identifies a change that does not appear to correlate with an approved change request. **Example tool**,`Tripwire`
+
+* Three basic components:
+  * Request Control: `Organized Framework` `Request Modification`
+  * Change Control: `Reproduce Situation` `Come up with a solution` `Testing` `Quality control` 
+  * Release Control: `Double Check the impact (if any) of the change`
+
+* Configuration management: This process is used to control the version(s) of software used throughout an organization and formally track and control changes to the software configuration. Four main components:
+  * Configuration Identification
+  * Configuration Control 
+  * Configuration Status Accounting
+  * Configuration Audit
+
+#### The DevOps Approach (Development and Operations)
+
+* *Issue:*  Disconnect between the major IT functions of software development, quality assurance, and technology operations.
+
+* Resolution to this issue: Bringing the three functions together in a single operational model. 
+
+* DevOps model is closely aligned with the *Agile development* approach.
+
+* Aim: Decrease the time required to develop, test, and deploy software changes.
+
+#### Application programing interfaces (API)
+
+* Cross-site functions to work properly, the websites must interact with each other. Many organizations offer application programming interfaces (APIs) for this purpose.
+
+* **For example**, a social media API might include some of the following API function calls:
+
+  * Post status
+  * Follow user
+  * Unfollow user
+  * Like/Favorite a post
+
+* **Security:** `Authentication` `Verify authentication and authorization of every API call` `Complex API key` `Keep it safe`
+
+
+#### Software testing
+
+* One of the tests you should perform is a **reasonableness check**. The reasonableness check ensures that values returned by software match specified criteria that are within reasonable bounds. **Example**, query of the weight of an human being returns 600 pounds which should fail reasonableness check.
+
+* Check how the product handles normal and valid input data, incorrect types, out-of-range values, and other bounds and/or conditions. Live workloads provide the best stress testing possible.
+
+* Do not use live or actual field data for testing, especially in the early development stages, since a flaw or error could result in the violation of integrity or confidentiality of the test data.
+
+* Separation of duties should be used to enable testing, someone other than programmer should perform testing. Why? To avoid a conflict of interest and assure a more secure and functional finished product.
+
+* Third party tester should be used for objective and nonbiased examination. They would do broader and more thorough test and prevents the bias and inclinations of the programmers from affecting the results of the test.
+
+* Three software testing methods:
+
+  * White-Box Testing: `Examines the internal logical structures of a program (Code)`
+  * Black-Box Testing: `Examines the program from a user perspective (Functional)` `No code access`
+  * Gray-Box Testing: `Combines the two approaches` `Testers examine the software from a user perspective` `access to the source code to design their tests` `do not analyze the inner workings of the program`
+
+ * Two categories of testing used specifically to evaluate application security:
+
+   * Static Testing: `Evaluates security without running it by analyzing either the source code or the compiled application` `Automated tools designed to detect common software flaws, such as buffer overflows`
+
+   * Dynamic Testing: `Evaluates the security of software in a runtime environment` 
+
+#### Code Repositories
+
