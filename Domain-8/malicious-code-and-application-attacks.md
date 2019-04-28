@@ -1,4 +1,4 @@
-### Malicious Code
+## Malicious Code
 
 Malicious code objects include a broad range of programmed computer security threats that exploit various network, operating system, software, and physical security vulnerabilities to spread malicious payloads to computer systems.
 
@@ -6,7 +6,7 @@ Malicious code objects include a broad range of programmed computer security thr
 
 * Worms, spread rapidly among vulnerable systems under their own power.
 
-#### Sources of Malicious Code
+### Sources of Malicious Code
 
 * In the early days of computer security, malicious code writers were extremely skilled (albeit misguided) software developers who took pride in carefully crafting innovative malicious code techniques. 
 
@@ -18,7 +18,7 @@ Malicious code objects include a broad range of programmed computer security thr
 
 * **Advanced persistent threat (APT)**: APTs are sophisticated adversaries with advanced technical skills and significant financial resources. They have access to zero-day exploits which are unknown to vendors. **Example**, Stuxnet, one example of APT-developed malware.
 
-#### Viruses
+### Viruses
 
 *  According to Symantec, one of the major antivirus software vendors, there were over 357 million strains of malicious code roaming the global network in 2016 and this trend only continues, with some sources suggesting that 200,000 new malware variants appear on the internet every day!
 
@@ -26,7 +26,7 @@ Malicious code objects include a broad range of programmed computer security thr
 
 * The **propagation** function defines how the virus will spread from system to system, infecting each machine it leaves in its wake. A virus’s payload delivers the **destructive power** by implementing whatever malicious activity the virus writer had in mind. This could be anything that negatively impacts the confidentiality, integrity, or availability of systems or data.
 
-#### Virus Propagation Techniques
+### Virus Propagation Techniques
 
 * Four common propagation techniques: master boot record infection, file infection, macro infection, and service injection.
 
@@ -58,7 +58,7 @@ Malicious code objects include a broad range of programmed computer security thr
 
   * **Safeguard**: Keep application up-to-date with the latest security patches. 
 
-#### Platforms Vulnerable to Viruses
+### Platforms Vulnerable to Viruses
 
   * As per av-test.org, researchers estimated that 77 percent of malware in existence targets the Windows platform in 2017. Which was 95 % in 2016.
 
@@ -68,7 +68,7 @@ Malicious code objects include a broad range of programmed computer security thr
 
   * Malware for Android doubled in 2016.
 
-#### Antivirus Mechanisms
+### Antivirus Mechanisms
 
   * Popular softwares include, Microsoft Security Essentials, McAfee AntiVirus, Avast Antivirus, Trend Micro Antivirus, ESET NOD32 Antivirus, Sophos Antivirus, and Symantec Norton AntiVirus, but a plethora of other products on the market offer protection for anything from a single system to an entire enterprise; other packages are designed to protect against specific common types of virus invasion vectors, such as inbound email.
 
@@ -81,7 +81,7 @@ Malicious code objects include a broad range of programmed computer security thr
 
   * Another example is of Tripwire data integrity assurance package, also provide a secondary antivirus functionality. Alerts admins about unauthorized file modification. It keeps a hash table of all the files and if there is any modification it would be able to alarm about modification unless it was intended. 
 
-#### Virus Technologies
+### Virus Technologies
 
 This this section we will exmines **four** specific types of viruses that use sneaky techniques in an attempt to escape detection:
 
@@ -111,7 +111,7 @@ This this section we will exmines **four** specific types of viruses that use sn
 
   * However, the virus decryption routines often contain telltale signatures that render them vulnerable to updated antivirus software packages.
 
-#### Hoaxes
+### Hoaxes
 
   * No discussion of viruses is complete without mentioning the nuisance and wasted resources caused by virus hoaxes.
 
@@ -119,13 +119,13 @@ This this section we will exmines **four** specific types of viruses that use sn
 
   * One famous example of such a hoax is the Good Times virus warning that first surfaced on the internet in 1994 and still circulates today.
 
-#### Logic Bombs
+### Logic Bombs
 
   * Logic bombs are malicious code objects that infect a system and lie dormant until they are triggered by the occurrence of one or more conditions such as time, program launch, website logon, and so on.
 
   * Many viruses and Trojan horses contain a logic bomb component.
 
-#### Trojan Horses
+### Trojan Horses
 
   * Its software program that appears benevolent but carries a malicious, behind-the-scenes payload that has the potential to wreak havoc on a system or network.
 
@@ -137,7 +137,7 @@ This this section we will exmines **four** specific types of viruses that use sn
 
   * **Botnet** is a Trojan horse made all the infected systems members of a botnet, a collection of computers (sometimes thousands or even millions!) across the internet under the control of an attacker known as the *botmaster*. Then infected PC become a part of denial-of-service attack against a website that he/she didn’t like for one reason or another.
 
-#### Worms
+### Worms
 
   * They contain the same destructive potential as other malicious code objects with an added twist—they propagate themselves without requiring any human intervention.
 
@@ -145,13 +145,13 @@ This this section we will exmines **four** specific types of viruses that use sn
 
   * *Stuxnet* exloted undocumented vulnerabilities and shared infected USB drives.
 
-#### Spyware and Adware
+### Spyware and Adware
 
   * *Spyware* monitors your actions and transmits important details to a remote system that spies on your activity. For example, spyware might wait for you to log into a banking website and then transmit your username and password to the creator of the spyware. Alternatively, it might wait for you to enter your credit card number on an e-commerce site and transmit it to a fraudster to resell on the black market.
 
   * *Adware*, while quite similar to spyware in form, has a different purpose. It uses a variety of techniques to display advertisements on infected computers. The simplest forms of adware display pop-up ads on your screen while you surf the web. More nefarious versions may monitor your shopping behavior and redirect you to competitor websites.
 
-#### Zero-Day Attacks
+### Zero-Day Attacks
 
   * Many forms of malicious code take advantage of zero-day vulnerabilities, security flaws discovered by hackers that have not been thoroughly addressed by the security community. There are two main reasons systems are affected by these vulnerabilities:
 
