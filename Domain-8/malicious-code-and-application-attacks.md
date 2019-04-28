@@ -1,281 +1,162 @@
-Table of Contents
-=================
-* [What is the problem we are trying to solve](#what-is-the-problem-we-are-trying-to-solve)
-	* [Software Development](#software-development)
-    * [Programing Language](#programing-language)
-    * [Assurance](#assurance)
-    * [Avoiding and Mitigating System Failure](#avoiding-and-mitigating-system-failure)
-    * [Systems Development Lifecycle](#systems-development-lifecycle)
-    * [Lifecycle Models](#lifecycle-models)
+### Malicious Code
 
-<h3>What is the problem we are trying to solve</h3>
+Malicious code objects include a broad range of programmed computer security threats that exploit various network, operating system, software, and physical security vulnerabilities to spread malicious payloads to computer systems.
 
-<p>Careless developers who can create backdoors, buffer overflow vulnerabilities or weakness that will leave the system.</p>
+* Computer viruses and Trojan horses depends on irresponsible use of computer by humans.
 
-<h3>Software Development</h3>
+* Worms, spread rapidly among vulnerable systems under their own power.
 
-<blockquote class="wp-block-quote"><p>Its much easier to build security into the system than it is to add security to an existing system.</p></blockquote>
+#### Sources of Malicious Code
 
-<h4>Programing Language</h4>
+* In the early days of computer security, malicious code writers were extremely skilled (albeit misguided) software developers who took pride in carefully crafting innovative malicious code techniques. 
 
-<p><em>Programing language that computer can understand</em></p>
+* They use to help in exposing security holes.
 
-<ul><li><strong>Machine language</strong>: Computer instructions are in 0's and 1's</li><li><strong>Assembly language</strong>: High-level language that uses mnemonics to represent basic instruction set for CPU.</li></ul>
+* Modern times have given rise to the script kiddie—the malicious individual who doesn’t understand the technology behind security vulnerabilities but downloads ready-to-use software (or scripts) from the internet and uses them to launch attacks against remote systems.
 
-<p><em>Once programmer choose their language two options available to them <strong>compilation</strong> and <strong>interpretation</strong> .</em></p>
+* Indeed international organized crime syndicates are known to play a role in malware proliferation. Located in countries with weak law enforcement mechanisms, use malware to steal the money and identities of people from around the world. **Example**, Zeus Trojan (banking passwords) believed to be product of Eastern European organized crime ring. 
 
-<ul><li>Compiled Language
-<ul>
-<li>C, Java, and FORTRAN are compiled languages.</li>
-<li><em>Compiler</em> is used to convert high-level language into executable files.</li>
-<li>It's not possible to directly view or modify the software instructions.</li>
-<li><em>Decompiler</em> is required to reverse engineer the software which is used to perform <code>malware analysis</code> or <code>competitive intelligence</code>.</li>
-<li>As original instructions are not visible to the end user so its easier for the programmer to embed back doors and/or other security flaws.</li>
-</ul>
-</li><li>Interpreted Language
-<ul>
-<li>Python, R JavaScript, and VBScript are interpreted language.</li>
-<li>End-user uses an interpreter to execute the source code.</li>
-<li>Original instruction/code is visible to the end user</li>
-<li>These languages are less prone to programmer embed weakness as the end code is visible to the end user.</li>
-<li>But everyone has access to the source code so end-user can modify the instructions.</li>
-</ul>
-</li></ul>
+* **Advanced persistent threat (APT)**: APTs are sophisticated adversaries with advanced technical skills and significant financial resources. They have access to zero-day exploits which are unknown to vendors. **Example**, Stuxnet, one example of APT-developed malware.
 
-<p><em>Object-Oriented Programming(OOP)</em></p>
+#### Viruses
 
-<ul><li>Example Languages: C++, Java, and .NET</li><li>It focuses on <em>objects</em> involved in an interaction</li><li>From a <em>security point of view</em>, OOP provides a black-box approach to abstraction, the user only needs to know the details of an object's interface, which are input, output, and action corresponding to each object. User need not know the inner working of the object to use it.</li></ul>
+*  According to Symantec, one of the major antivirus software vendors, there were over 357 million strains of malicious code roaming the global network in 2016 and this trend only continues, with some sources suggesting that 200,000 new malware variants appear on the internet every day!
 
-<h4>Assurance</h4>
+* As with biological viruses, computer viruses have two main functions—**propagation** and **destruction**.
 
-<ul><li>Ensure security control mechanism built into the new application.</li><li><em>Assurance procedures</em> are processes by which trust is built into the lifecycle of the system.</li><li><em>Common Criteria</em> provides a standardized approach to assurance use in government settings.</li></ul>
+* The **propagation** function defines how the virus will spread from system to system, infecting each machine it leaves in its wake. A virus’s payload delivers the **destructive power** by implementing whatever malicious activity the virus writer had in mind. This could be anything that negatively impacts the confidentiality, integrity, or availability of systems or data.
 
-<h4>Avoiding and Mitigating System Failure</h4>
+#### Virus Propagation Techniques
 
-<ul><li><strong>Input Validation</strong> It verifies that the values provided by a user match the programmer's exception before allowing further processing. <em>Controls/example</em>, available to programmers are <code>limit check</code> (check if the value is in a certain range, eg. months should be limited to 1-12.), check for unusual character and if need be replace them with safe values, the process is called <code>escaping input</code>.</li><li><strong>Authentication and Session Management</strong> User should be properly <code>authenticated</code> so they can perform only <code>authorized</code> action and user <code>session</code> is tracked from start to finish. Level or type of authentication method that should be used is dictated by the level of sensitivity of that application.</li><li><strong>Error Handling</strong> Developer should disable detailed error messaging (<code>debugging mode</code>) on any servers and application that will display internal information to the attacker.</li><li><strong>Logging</strong> The application should be configured to send detailed logging of errors and other security events to a centralized log repository. Open Web Application Security Project (<a title="OWASP" href="https://www.owasp.org/index.php/OWASP_Secure_Coding_Practices_Checklist#Error_Handling_and_Logging">OWASP</a>) Secure Coding Guidelines suggest logging the following events:
-<ul>
-<li>Input validation failures</li>
-<li>Authentication attempts, especially failures</li>
-<li>Access control failures</li>
-<li>Tampering attempts</li>
-<li>Use of invalid or expired session tokens</li>
-<li>Exceptions raised by the operating system or applications</li>
-<li>Use of administrative privileges</li>
-<li>Transport Layer Security (TLS) failures</li>
-<li>Cryptographic errors</li>
-</ul>
-</li><li><strong>Fail-Secure and Fail-Open</strong> <code>Fail-Secure</code> failure state puts the system into a high level of security (or disable the system) until an admin can diagnose the issue and restore the system to normal operation. Example, Blue screen of death (BSOD) when Windows (OS) put a system to halt with STOP error. <code>Fail-Open</code> states allow users to bypass failed security controls. This option should be used with extreme caution and ideally, alternative controls should be in place to protect the resources.</li></ul>
+* Four common propagation techniques: master boot record infection, file infection, macro infection, and service injection.
 
-<h4>Systems Development Lifecycle</h4>
+* **Master boot record infection**
 
-<p>Core activities are (<code>__</code> showcase keywords to keep in mind):</p>
+  * MBR is extremely small (usually 512 bytes), it can’t contain all the code required to implement the virus’s propagation and destructive functions. To bypass this space limitation, MBR viruses store the majority of their code on another portion of the storage media. When the system reads the infected MBR, the virus instructs it to read and execute the code stored in this alternate location, thereby loading the entire virus into memory and potentially triggering the delivery of the virus’s payload.
 
-<ul><li>Conceptual definition: <code>Purpose</code> <code>System Requirement</code></li><li>Functional requirements determination: <code>Specific System functionalties</code></li><li>Control specifications development: <code>From Security prespective</code> <code>aduquate access control</code> <code>maintain confidentiality</code> <code>done proactivily</code></li><li>Design review</li><li>Code review walk-through</li><li>System test review: <code>User Acceptance Testing</code></li><li>Maintenance and change management</li></ul>
+  * MBR viruses act by redirecting the system to an infected boot sector, which loads the virus into memory before loading the operating system from the legitimate boot sector.
 
-<h4>Lifecycle Models</h4>
+* **File Infector Viruses**
 
-<blockquote class="wp-block-quote"><p>Software development lifecycle (SDLC)
+  * File infector viruses may slightly alter the code of an executable program (.exe and .com), thereby implanting the technology the virus needs to replicate and damage the system.
 
-</p></blockquote>
+  * A variation of the file infector virus is the *companion virus*. These viruses are self-contained executable files that escape detection by using a filename similar to, but slightly different from, a legitimate operating system file. They rely on the default filename extensions that Windows-based operating systems append to commands when executing program files (.com, .exe, and .bat, in that order). For example, if you had a program on your hard disk named game.exe, a companion virus might use the name game.com. 
 
-<p><strong>Waterfall Model</strong></p>
+* **Macro Viruses**
 
-<ul><li>Winston Royce in 1970</li><li>Series of iterative activities</li><li>Seven Stages</li><li>As each stage is completed, the project moves into the next phase</li><li><em>Modern</em> waterfall model does allow developers to return to the previous phase to correct defects discovered during the subsequent phase. This is often known as the <code>feedback loop characteristic</code> of the waterfall model.</li><li>Major criticisms: Allows to step back only one phase, which does not allow correction of a defect detected in later phases.</li></ul>
+  * Its a common practice for software application to create scripts to automate certain tasks. Common programming language used is Visual Basic for Applications (VBA).
 
-<figure class="wp-block-image is-resized"><img src="waterfallmodel.jpg" alt="" class="wp-image-98" width="450" height="401"/></figure>
+  * Macro viruses first appeared on the scene in the mid-1990s, utilizing crude technologies to infect documents created in the popular Microsoft Word environment. 
+ 
+  * Examples, *Melissa Virus* and *I Love You Virus* are few examples that uses Word documents to exploit vulnerability in other application like Microsoft Outlook. 
 
-<p><strong>Spiral Model</strong></p>
+  * **Safeguard**: Do not allow untrusted macro to execute without explicit user permission.
 
-* 1988, Barry Boehm created Sprial Model
-* Multiple iterations of a waterfall-style process.
-* Its also called metamodel, or a “model of models.” 
+* **Service Injection Viruses**
 
-<figure class="wp-block-image"><img src="SpiralModel.jpg" alt="" class="wp-image-102" width="450" height="401"/></figure>
+  * Its a technique where virus inject themselves into trusted running processes like svchost.exe, winlogin.exe, and explorer.exe. Its effective cause this will bypass detection via any anti-virus.
 
-* At each round a prototype is created (P1, P2 .. ) so product mature with every round.
+  * **Safeguard**: Keep application up-to-date with the latest security patches. 
 
-<p><strong>Agile Software Development</strong></p>
+#### Platforms Vulnerable to Viruses
 
-* One of the most propular development models of modern times, which helps developers to develop new functionality that meets those needs in an iterative fashion. Many variants are available, including Scrum, Agile Unified Process (AUP), the Dynamic Systems Development Model (DSDM), and Extreme Programming (XP).
+  * As per av-test.org, researchers estimated that 77 percent of malware in existence targets the Windows platform in 2017. Which was 95 % in 2016.
 
-* Values:
-  * **Individuals and interactions** over processes and tools
-  * **Working software** over comprehensive documentation
-  * **Customer collaboration** over contract negotiation
-  * **Responding to change** over following a plan
+  * Above change in the percentage reflects that malware focus has changed from windows to mobile and/or other platforms.
 
-* [Principles](http://agilemanifesto.org/principles.html):
-```
-Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
+  * Malware targeting Mac tripled in 2016.
 
-Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.
+  * Malware for Android doubled in 2016.
 
-Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+#### Antivirus Mechanisms
 
-Business people and developers must work together daily throughout the project.
+  * Popular softwares include, Microsoft Security Essentials, McAfee AntiVirus, Avast Antivirus, Trend Micro Antivirus, ESET NOD32 Antivirus, Sophos Antivirus, and Symantec Norton AntiVirus, but a plethora of other products on the market offer protection for anything from a single system to an entire enterprise; other packages are designed to protect against specific common types of virus invasion vectors, such as inbound email.
 
-Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
+  * Most of software are *signature-based detection* and maintain (frequently update) large database that contains telltale characteristic of known viruses. Action includes:
+    * Eradicate the virus (disinfect the file)
+    * Quarantine the file for manual examination
+    * Delete the file most when it is deemed dangerous
 
-The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
+  * Another technique is heuristic-based mechanisms to detect potential malware infections. Which analyzes behavior of a software to telltale sign of virus activity, example privilege escalation, alter unrelated OS files etc. Mostly file that is deemed harmful is quarantined and send to malware analysis tool where they are executed in an isolated but monitored environment, then blacklist it everywhere.
 
-Working software is the primary measure of progress.
+  * Another example is of Tripwire data integrity assurance package, also provide a secondary antivirus functionality. Alerts admins about unauthorized file modification. It keeps a hash table of all the files and if there is any modification it would be able to alarm about modification unless it was intended. 
 
-Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+#### Virus Technologies
 
-Continuous attention to technical excellence and good design enhances agility.
+This this section we will exmines **four** specific types of viruses that use sneaky techniques in an attempt to escape detection:
 
-Simplicity--the art of maximizing the amount of work not done--is essential.
+**Multipartite Viruses**
 
-The best architectures, requirements, and designs emerge from self-organizing teams.
+  * It uses more than one propagation technique in an attempt to penetrate systems that defend against only one method or the other.
 
-At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
-```
+  * **Example:** Marzia virus which infected critical EXE and COM files in Windows, like command.exe but attaching 2048 bytes of malicious message to each file (***First* - file infector virus**) then after 2 hours effected the MBR and loads the virus to the memory (***Second* - Master boot record infection**)
 
-<p><strong>Software Capability Maturity Model</strong></p>
+**Stealth Viruses** 
 
-* Capability Maturity Model for Software, also known as the Software Capability Maturity Model (abbreviated as SW-CMM, CMM, or SCMM)
-* Mantra: maturity phases in sequential fashion.
-* The idea behind the SW-CMM is that the quality of software depends on the quality of its development process.
-* Stages:
+  * It hides themselves by actually tampering with the operating system to fool antivirus packages into thinking that everything is functioning normally.
 
-![alt text](SW-CMM.png)
+  * **Example:** A stealth boot sector virus might overwrite the system’s master boot record with malicious code but then also modify the operating system’s file access functionality to cover its tracks. So when an AV requests a copy of MBR it receives a clean copy. 
 
-<p><strong>IDEAL Model</strong></p>
+**Polymorphic Viruses**
 
-* It implements many of the SW-CMM attributes
-* Five Phases: *Initiating > Diagnosing > Establishing > Acting > Learning*
+  * Actually modify their own code as they travel from system to system. The virus’s propagation and destruction techniques remain the same, but the signature of the virus is somewhat different each time it infects a new system, its is done to evade signature-based detection. 
 
-![alt text](IDEALModel.jpg)
+  * But AVs not have detection based on polymorphism techniques which helps them detect these viruses. But AV takes longer time to create signatures.
 
-> For Memorization: To help you remember the initial letters of each of the 10 level names of the SW-CMM and IDEAL models (II DR ED AM LO), imagine yourself sitting on the couch in a psychiatrist’s office saying, “I…I, Dr. Ed, am lo(w).” If you can remember that phrase, then you can extract the 10 initial letters of the level names. If you write the letters out into two columns, you can reconstruct the level names in order of the two systems. The left column is the IDEAL model, and the right represents the levels of the SW-CMM. 
+**Encrypted Viruses**
 
-IDEAL | SW-CMM
---- | ---
-Initiating | Initiating
-Diagnosing | Repeatable
-Establishing | Defined
-Acting | Managed
-Learning | Optimized
+  * It is quite similar to polymorphic viruses—each infected system has a virus with a different signature.
 
-#### Gantt Charts and PERT
+  * Encrypted viruses use a very short segment of code, known as the *virus decryption routine*, which contains the cryptographic information necessary to load and decrypt the main virus code stored elsewhere on the disk. Each infection utilizes a different cryptographic key, causing the main code to appear completely different on each system. 
 
-* Gantt Charts is a bar chart that shows the interrelationships over time between projects and schedules.
-* It provides a graphical illustration of a schedule that helps to plan, coordinate, and track specific tasks in a project
+  * However, the virus decryption routines often contain telltale signatures that render them vulnerable to updated antivirus software packages.
 
-![alt text](gantt.jpg)
+#### Hoaxes
 
-* Program Evaluation Review Technique (**PERT**) is a project-scheduling tool used to judge the size of a software product in development and calculate the standard deviation (SD) for risk assessment. 
-* PERT is used to direct improvements to project management and software coding in order to produce more efficient software. 
+  * No discussion of viruses is complete without mentioning the nuisance and wasted resources caused by virus hoaxes.
 
+  * EMAIL messages used to spread the infection
 
-#### Change and Configuration Management
+  * One famous example of such a hoax is the Good Times virus warning that first surfaced on the internet in 1994 and still circulates today.
 
-* Organization must put a procedure in place to manage changes in an organized fashion. 
+#### Logic Bombs
 
-* CThose changes should then be logged to a central repository to support future auditing, investigation, and analysis requirements.
+  * Logic bombs are malicious code objects that infect a system and lie dormant until they are triggered by the occurrence of one or more conditions such as time, program launch, website logon, and so on.
 
-* CHANGE MANAGEMENT AS A SECURITY TOOL: **Example situation**: System administrators receive an alert only if the security team identifies a change that does not appear to correlate with an approved change request. **Example tool**,`Tripwire`
+  * Many viruses and Trojan horses contain a logic bomb component.
 
-* Three basic components:
-  * Request Control: `Organized Framework` `Request Modification`
-  * Change Control: `Reproduce Situation` `Come up with a solution` `Testing` `Quality control` 
-  * Release Control: `Double Check the impact (if any) of the change`
+#### Trojan Horses
 
-* Configuration management: This process is used to control the version(s) of software used throughout an organization and formally track and control changes to the software configuration. Four main components:
-  * Configuration Identification
-  * Configuration Control 
-  * Configuration Status Accounting
-  * Configuration Audit
+  * Its software program that appears benevolent but carries a malicious, behind-the-scenes payload that has the potential to wreak havoc on a system or network.
 
-#### The DevOps Approach (Development and Operations)
+  * *Example*: A piece of software that claims that PC users can run XBOX games on PC. Once user installed this software nothing happened, but on the trojan made a windows registry change that would open a website whenever someone boot there PC. They were earning Ad renewing from the website and earning lot due to high number of page hits.
 
-* *Issue:*  Disconnect between the major IT functions of software development, quality assurance, and technology operations.
+  * **Rogue antivirus software** which claims to clean your PC via pop-ups then either steals personal info or prompt user to pay for an "upgrade" with more featured software.
 
-* Resolution to this issue: Bringing the three functions together in a single operational model. 
+  * **Ransomware** infects a target machine and then uses encryption technology to encrypt documents, spreadsheets, and other files stored on the system with a key known only to the malware creator. Pop-up message warning that the files will be permanently deleted unless a ransom is paid within a short period of time. *example* Cryptolocker, WannaCry, NotPetya etc.
 
-* DevOps model is closely aligned with the *Agile development* approach.
+  * **Botnet** is a Trojan horse made all the infected systems members of a botnet, a collection of computers (sometimes thousands or even millions!) across the internet under the control of an attacker known as the *botmaster*. Then infected PC become a part of denial-of-service attack against a website that he/she didn’t like for one reason or another.
 
-* Aim: Decrease the time required to develop, test, and deploy software changes.
+#### Worms
 
-#### Application programing interfaces (API)
+  * They contain the same destructive potential as other malicious code objects with an added twist—they propagate themselves without requiring any human intervention.
 
-* Cross-site functions to work properly, the websites must interact with each other. Many organizations offer application programming interfaces (APIs) for this purpose.
+  * *Code Red Worm* unpatched versions of Microsoft’s Internet Information Server (IIS)
 
-* **For example**, a social media API might include some of the following API function calls:
+  * *Stuxnet* exloted undocumented vulnerabilities and shared infected USB drives.
 
-  * Post status
-  * Follow user
-  * Unfollow user
-  * Like/Favorite a post
+#### Spyware and Adware
 
-* **Security:** `Authentication` `Verify authentication and authorization of every API call` `Complex API key` `Keep it safe`
+  * *Spyware* monitors your actions and transmits important details to a remote system that spies on your activity. For example, spyware might wait for you to log into a banking website and then transmit your username and password to the creator of the spyware. Alternatively, it might wait for you to enter your credit card number on an e-commerce site and transmit it to a fraudster to resell on the black market.
 
+  * *Adware*, while quite similar to spyware in form, has a different purpose. It uses a variety of techniques to display advertisements on infected computers. The simplest forms of adware display pop-up ads on your screen while you surf the web. More nefarious versions may monitor your shopping behavior and redirect you to competitor websites.
 
-#### Software testing
+#### Zero-Day Attacks
 
-* One of the tests you should perform is a **reasonableness check**. The reasonableness check ensures that values returned by software match specified criteria that are within reasonable bounds. **Example**, query of the weight of an human being returns 600 pounds which should fail reasonableness check.
+  * Many forms of malicious code take advantage of zero-day vulnerabilities, security flaws discovered by hackers that have not been thoroughly addressed by the security community. There are two main reasons systems are affected by these vulnerabilities:
 
-* Check how the product handles normal and valid input data, incorrect types, out-of-range values, and other bounds and/or conditions. Live workloads provide the best stress testing possible.
+    * The necessary delay between the discovery of a new type of malicious code and the issuance of patches and antivirus updates. This is known as the *window of vulnerability*.
 
-* Do not use live or actual field data for testing, especially in the early development stages, since a flaw or error could result in the violation of integrity or confidentiality of the test data.
-
-* Separation of duties should be used to enable testing, someone other than programmer should perform testing. Why? To avoid a conflict of interest and assure a more secure and functional finished product.
-
-* Third party tester should be used for objective and nonbiased examination. They would do broader and more thorough test and prevents the bias and inclinations of the programmers from affecting the results of the test.
-
-* Three software testing methods:
-
-  * White-Box Testing: `Examines the internal logical structures of a program (Code)`
-  * Black-Box Testing: `Examines the program from a user perspective (Functional)` `No code access`
-  * Gray-Box Testing: `Combines the two approaches` `Testers examine the software from a user perspective` `access to the source code to design their tests` `do not analyze the inner workings of the program`
-
- * Two categories of testing used specifically to evaluate application security:
-
-   * Static Testing: `Evaluates security without running it by analyzing either the source code or the compiled application` `Automated tools designed to detect common software flaws, such as buffer overflows`
-
-   * Dynamic Testing: `Evaluates the security of software in a runtime environment` 
-
-#### Code Repositories
-
-* Code repositories from high level is a collaborative tool.
-
-* **Examples:** GitHub, Bitbucket, and SourceForge
-
-* Features included version control, bug tracking, web hosting, release management, and communications functions.
-
-* **Security**: Repository owners must carefully design access controls to only allow appropriate users read and/or write access.
-
-* **Example of a breach:** AWS API Keys getting published on Github etc
-
-#### Service Level Agreements
-
-* Providing services to internal and/or external customers maintain an appropriate level of service agreed on by both the service provider and the vendor.
-
-* Service-level agreements can have financial clauses, **for example**, if a critical circuit is down for more than 15 minutes, the service provider might agree to waive all charges on that circuit for one week.
-
-#### Software Acquisition 
-
-From security perspective:
-
-  * Security professionals must understand the proper configuration of that software to meet security objectives. 
-  * Keep track of security bulletins and patches that correct newly discovered vulnerabilities.
-  * In SaaS environments, security professionals should monitoring the vendor’s security via audits, assessments, vulnerability scans, and other measures designed to verify that the vendor maintains proper controls.
-
---------------
-# Complete this 
-
-### Establishing Databases and Data Warehousing
-
-#### Database Management System Architecture
-
-**Hierarchical and Distributed Databases**
-
-**Relational Databases**
-
-**DATABASE TRANSACTIONS**
-
-#### Security for multilevel databases
-
-#### Open Database Connectivity 
-
-
+    * Slowness in applying updates on the part of system administrators
+  
+  * *Safeguard* - defense-in-depth approach to cybersecurity that incorporates a varied set of overlapping security controls.
