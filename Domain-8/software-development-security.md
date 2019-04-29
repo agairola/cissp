@@ -1,12 +1,25 @@
-Table of Contents
-=================
+# Table of Content
+------------------
 * [What is the problem we are trying to solve](#what-is-the-problem-we-are-trying-to-solve)
-	* [Software Development](#software-development)
+ * [Software Development](#software-development)
     * [Programing Language](#programing-language)
     * [Assurance](#assurance)
     * [Avoiding and Mitigating System Failure](#avoiding-and-mitigating-system-failure)
     * [Systems Development Lifecycle](#systems-development-lifecycle)
     * [Lifecycle Models](#lifecycle-models)
+    * [Gantt Charts and PERT](#gantt-charts-and-pert)
+    * [Change and Configuration Management](#change-and-configuration-management)
+    * [The DevOps Approach (Development and Operations)](#the-devops-approach-development-and-operations)
+    * [Application programing interfaces (API)](#application-programing-interfaces-api)
+    * [Software testing](#software-testing)
+    * [Code Repositories](#code-repositories)
+    * [Service Level Agreements](#service-level-agreements)
+    * [Software Acquisition](#software-acquisition)
+   * [Complete this](#complete-this)
+ * [Establishing Databases and Data Warehousing](#establishing-databases-and-data-warehousing)
+    * [Database Management System Architecture](#database-management-system-architecture)
+    * [Security for multilevel databases](#security-for-multilevel-databases)
+    * [Open Database Connectivity](#open-database-connectivity)
 
 <h3>What is the problem we are trying to solve</h3>
 
