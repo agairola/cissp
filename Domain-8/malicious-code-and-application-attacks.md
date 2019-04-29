@@ -1,3 +1,5 @@
+
+
 ## Malicious Code
 
 Malicious code objects include a broad range of programmed computer security threats that exploit various network, operating system, software, and physical security vulnerabilities to spread malicious payloads to computer systems.
@@ -161,21 +163,21 @@ This this section we will exmines **four** specific types of viruses that use sn
   
   * *Safeguard* - defense-in-depth approach to cybersecurity that incorporates a varied set of overlapping security controls.
 
-### Password Attacks
+## Password Attacks
 
 Three methods attackers use to learn the passwords of legitimate users and access a system: password-guessing attacks, dictionary attacks, and social-engineering attacks:
 
-**Password Guessing**
+### Password Guessing
 
 Use of `Most Common Passwords`, SplashData produces list of most common password every year. 
 
-**Dictionary Attacks**
+### Dictionary Attacks
 
 `John the Ripper` is a common tool used by attackers, where a list of common password called dictionary which is then passed through a hash/encryption options which matching the destination  (/etc/shadow file) alog. Then attacker match the output with the shadow files to guess the password.
 
 Hashing `Rainbow table` is another variant of dictionary attacks.
 
-**Social Engineering Attacks**
+### Social Engineering Attacks
 
 `Fraud Calls` to extract personal information which can be useful to guess user passwords. `Phishing emails`are another popular mechanisms. Common variant include:
 
@@ -185,15 +187,15 @@ Hashing `Rainbow table` is another variant of dictionary attacks.
 
 Another mechanism is `Dumpster diving`
 
-**Countermeasure**
+### Countermeasure
 
 The cornerstone of any security program is education, `periodic training`, use of password storage service like LastPass.
 
-### Application Security
+## Application Security
 
 Below are some of the specific techniques attackers use to exploit vulnerabilities left behind by sloppy coding practices:
 
-#### Buffer Overflows
+### Buffer Overflows
 
 Buffer overflow vulnerabilities exist when a developer does not properly validate user input to ensure that it is of an appropriate size. Input that is too large can “overflow” a data structure to affect other data stored in the computer’s memory.
 
@@ -203,26 +205,26 @@ Programmer should take steps to ensure that each of the following conditions is 
   * The user can’t enter an invalid value for the variable types that will hold it (for example, a letter into a numeric variable).
   * The user can’t enter a value that will cause the program to operate outside its specified parameters (for example, answer a “yes” or “no” question with “maybe”).
 
-#### Time of check to time to use (TOCTTOU or TOC/TOU)
+### Time of check to time to use (TOCTTOU or TOC/TOU)
 
 It is timing vulnerability that occurs when a program checks access permissions too far in advance of a resource request. *Example* If the system administrator revokes a particular permission, that restriction would not be applied to the user until the next time they log on. 
 
-#### Back Doors
+### Back Doors
 
 Back doors are undocumented command sequences that allow individuals with knowledge of the back door to bypass normal access restrictions. They are often used during the development and debugging process to speed up the workflow and avoid forcing developers to continuously authenticate to the system.
 
-#### Escalation of privilege and Rootkits
+### Escalation of privilege and Rootkits
 
 Once attackers gain a foothold on a system, they often quickly move on to a second objective—expanding their access from the normal user account they may have compromised to more comprehensive, administrative access. They do this by engaging in escalation-of-privilege attacks. One of the most common ways that attackers wage escalation-of-privilege attacks is through the use of *rootkits*. Rootkits are freely available on the internet and exploit known vulnerabilities in various operating systems.  
 
 **Safeguard:** Administrators must keep themselves informed about new 
 security patches released for operating systems used in their environment and apply these corrective measures consistently. 
 
-### Web Application Security
+## Web Application Security
 
 We will cover common web application attacks
 
-#### Cross-Site Scripting
+### Cross-Site Scripting
 
 Cross-site scripting (XSS) attacks occur when web applications contain some type of reflected input. For example, consider a simple web application that contains a single text box asking a user to enter their name. When the user clicks Submit, the web application loads a new page that says, *“Hello, name.”*
 
@@ -236,7 +238,7 @@ Mike<SCRIPT>alert('hello')</SCRIPT>
 
 [Ways evade cross-site scripting filters (OWASP)](https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet)
 
-#### Cross-Site Request Forgery
+### Cross-Site Request Forgery
 
 Cross-site request forgery attacks, abbreviated as XSRF or CSRF attacks, are similar to cross-site scripting attacks but exploit a different trust relationship. XSS attacks exploit the trust that a user has in a website to execute code on the user’s computer. XSRF attacks exploit the trust that remote sites have in a user’s system to execute commands on the user’s behalf.
 
@@ -244,7 +246,7 @@ XSRF attacks work by making the reasonable assumption that users are often logge
 
 **SafeGuard:** One way to do this is to create web applications that use secure tokens that the attacker would not know to embed in the links. Another safeguard is for sites to check the referring URL in requests received from end users and only accept requests that originated from their own site.
 
-#### SQL Injection
+### SQL Injection
 
 SQL (Structured Query Language) injection attacks use unexpected input to a web application. However, instead of using this input to attempt to fool a user, SQL injection attacks use it to gain unauthorized access to an underlying database. 
 
@@ -258,31 +260,31 @@ SQL injection attacks allow a malicious individual to directly perform SQL trans
 
   * **Limit Account Privileges** The database account used by the web server should have the smallest set of privileges possible. If the web application needs only to retrieve data, it should have that ability only. In the example, the DELETE command would fail if the account had SELECT privileges only.
 
-### Reconnaissance Attacks
+## Reconnaissance Attacks
 
 Performing reconnaissance can allow an attacker to find weak points to target directly with their attack code. We will look into three of those automated techniques — IP probes, port scans, and vulnerability scans
 
-#### IP Probes
+### IP Probes
 
 IP probes (also called IP sweeps or ping sweeps) are often the first type of network reconnaissance carried out against a targeted network. With this technique, automated tools simply attempt to ping each address in a range. Systems that respond to the ping request are logged for further analysis. Addresses that do not produce a response are assumed to be unused and are ignored. *Example* NMAP
 
 **SafeGuard:** Disable ping functionality, if that not possible at least for users external to a network.
 
-#### Port Scans
+### Port Scans
 
 Attackers use port scan software to probe all the active systems on a network and determine what public services are running on each machine. For example, if the attacker wants to target a web server, they might run a port scan to locate any systems with a service running on port 80, the default port for Hypertext Transfer Protocol (HTTP) services
 
 **SafeGuard:** Administrators should use this information to disable unnecessary services on systems under their control. 
 
-#### Vulnerability Scan
+### Vulnerability Scan
 
 Once the attacker determines a specific system to target, they need to discover a specific vulnerability in that system that can be exploited to gain the desired access permissions. Some of the more popular tools for this purpose include Nessus, OpenVAS, Qualys, Core Impact, and Nexpose
 
-### Masquerading Attacks
+## Masquerading Attacks
 
 One of the easiest ways to gain access to resources you’re not otherwise entitled to use is to impersonate someone who does have the appropriate access permissions. Two common masquerading attacks—IP spoofing and session hijacking
 
-#### IP spoofing
+### IP spoofing
 
 In an IP spoofing attack, the malicious individual simply reconfigures their system so that it has the IP address of a trusted system and then attempts to gain access to other external resources.
 
@@ -292,7 +294,7 @@ In an IP spoofing attack, the malicious individual simply reconfigures their sys
   * Packets with external source IP addresses don’t exit the network from the inside.
   * Packets with private IP addresses don’t pass through the router in either direction (unless specifically allowed as part of an intranet configuration).
 
-#### Session hijacking 
+### Session hijacking 
 
 Session hijacking attacks occur when a malicious individual intercepts part of the communication between an authorized user and a resource and then uses a hijacking technique to take over the session and assume the identity of the authorized user. 
 
