@@ -1,6 +1,5 @@
 # Table of Content
-===================
-
+------------------
    * [Applying Security Operations Concepts](#applying-security-operations-concepts)
         * [Need-to-know And Least Privilege](#need-to-know-and-least-privilege)
            * [Need-to-Know Access](#need-to-know-access)
