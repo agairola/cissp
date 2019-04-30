@@ -129,3 +129,98 @@ Emergency management plans and practices help an organization address personnel 
 
 It’s also important to implement security training and awareness programs. These programs help ensure that personnel are aware of duress systems, travel best practices, emergency management plans, and general safety and security best practices.
 
+## Securely Provisioning Resources
+
+Another element of the security operations domain is provisioning and managing resources throughout their lifecycle.  This section focuses on the provisioning and management of other asset types such as hardware, software, physical, virtual, and cloud-based assets.
+
+### Managing Hardware and Software Assets
+
+*Hardware Includes:* Computers, servers, routers, switches, and peripherals
+*Software Includes:* Operating systems and applications
+
+
+#### Hardware Inventories
+
+Many organizations use databases and inventory applications to perform inventories and track hardware assets through the entire equipment lifecycle. *Example* `bar-code` maps to `model, serial number, and location` in the database. *Another Example* `radio frequency identification (RFID) tags`. RFID methods significantly reduce the time needed to perform an inventory. Portable media is also considered as an asset. 
+
+***Disposing*** `removes all data` from hard drives, nonvolatile memory, and removable media such as CDs, DVDs and USB flash drives within the system. **Standard/Guideline:** *NIST 800-88r1*. 
+
+#### Software Licensing
+
+License keys are used to activate softwares. If license keys are leaked outside the organization it can cause legal trouble in some cases so its should be protected. Many tools are available that can inspect systems remotely to detect the system’s details. For example, Microsoft’s System Center Configuration Manager (ConfigMgr or SCCM) is a server product that can query each system on a network.
+
+### Protecting Physical Assets
+
+Physical assets go beyond IT hardware and include all physical assets, such as an organization’s building and its contents. Methods used to protect physical security assets include fences, barricades, locked doors, guards, closed circuit television (CCTV) systems, and much more. *Example* Build datacenter on the center of the build rather than outside the walls. *Other examples*, cipher locks, mantraps, security badges, and guards are all common methods used to control access.
+
+### Managing Virtual Assets
+
+Some of the virtual assets within Software-defined everything (SDx) include the following:
+
+**Virtual Machines (VMs)**
+
+**Virtual Desktop Infrastructure (VDI)** or virtual desktop environment (VDE). Persistent virtual desktops retain a custom desktop for the user. Nonpersistent virtual desktops are identical for all users. If a user makes changes, the desktop reverts to a known state after the user logs off.
+
+**Software-Defined Networks (SDNs)** SDNs decouple the control plane from the data plane (or forwarding plane). This eliminates some of the complexity related to traditional networking protocols.
+
+**Virtual Storage Area Networks (VSANs)** A SAN is a dedicated high-speed network that hosts multiple storage devices. VSANs bypass these complexities with virtualization.
+
+The primary software component in visualization is a hypervisor.
+
+### Managing Cloud-Based Assets
+
+Cloud-based assets include any resources that an organization accesses using cloud computing. One of the primary challenges with cloud-based resources hosted outside the organization is that they are outside the direct control of an organization, making it more difficult to manage the risk. `cloud service provider (CSP)`
+
+**Software as a service (SaaS)** Software as a service (SaaS) models provide fully functional applications typically accessible via a web browser. For example, Google’s Gmail is a SaaS application. The CSP (Google in this example) is responsible for all maintenance of the SaaS services. Consumers do not manage or control any of the cloud-based assets.
+
+**Platform as a service (PaaS)** Platform as a service (PaaS) models provide consumers with a computing platform, including hardware, an operating system, and applications. In some cases, consumers install the applications from a list of choices provided by the CSP. Consumers manage their applications and possibly some configuration settings on the host. However, the CSP is responsible for maintenance of the host and the underlying cloud infrastructure.
+
+**Infrastructure as a service (IaaS)** Infrastructure as a service (IaaS) models provide basic computing resources to consumers. This includes servers, storage, and in some cases, networking resources. Consumers install operating systems and applications and perform all required maintenance on the operating systems and applications. The CSP maintains the cloud-based infrastructure, ensuring that consumers have access to leased systems.
+
+**Standard/Guideline:** *NIST SP 800-145*, “The NIST Definition of Cloud Computing,” provides standard definitions for many cloud-based services. This includes definitions for service models (SaaS, PaaS, and IaaS), and definitions for deployment models (public, private, community, and hybrid). *NIST SP 800-144*, “Guidelines on Security and Privacy in Public Cloud Computing,” provides in-depth details on security issues related to cloud-based computing.
+
+The cloud deployment model also affects the breakdown of responsibilities of the cloud-based assets. The four cloud models available are public, private, community, and hybrid.
+
+**Public Cloud Model** `Any consumers` 
+
+**Private Cloud Model** `single organization` `using their own on-premises resources` `responsible for all maintenance` 
+
+**Community Cloud Model** `two or more organizations` `Maintenance responsibilities are shared based on who is hosting the assets and the service models`
+
+**Hybrid Cloud Model** `combination of two or more clouds` `Maintenance responsibilities are shared based on who is hosting the assets and the service models.`
+
+### Media Management
+
+  * Media management refers to the steps taken to protect media and data stored on media. 
+
+  * **Includes** CDs and DVDs, portable USB drives, external SATA (eSATA) drives, internal hard drives, solid-state drives, USB flash drives and many portable devices, such as smartphones. 
+
+  * Backups are often contained on tapes. 
+
+  * When media includes sensitive information, it should be stored in a secure location  (with temperature and humidity controls) with strict access controls to prevent losses due to unauthorized access
+
+  * It can include technical controls like USB drives are not allowed on laptops. 
+
+  * When media is marked, handled, and stored properly, it helps prevent unauthorized disclosure (***loss of confidentiality***), unauthorized modification (***loss of integrity***), and unauthorized destruction (***loss of availability***).
+
+#### Tape Media
+
+  * Used for backup
+
+  * Take at least two copies of backups, one on onsite and another on a secure location.
+    
+  * Protect against: Magnetic fields, dust and dirt, avoiding sharp objects, extreme temperature, outside environment; avoid sunlight, moisture, humidity, heat, and cold.
+
+#### Mobile Devices
+
+  * Bring your own device (*BYOD*) and choose your own device (*CYOD*) has some management challenges, mobile device management (*MDM*) are used to maintain these devices.  
+
+  * Some of the common controls organizations enable on user phones are encryption, screen lock, Global Positioning System (GPS), and remote wipe signals.
+
+#### Managing Media Lifecycle
+
+  *  Reusable media is subject to a *mean time to failure (MTTF)* that is sometimes represented in the number of times it can be reused or the number of years you can expect to keep it.
+
+  * Monitor backups for errors and use them as a guide to gauge the lifetime in your environment. When a tape begins to generate errors, technicians should rotate it out of use.
+
+  * Tapes are commonly destroyed in bulk shredders or incinerators.
