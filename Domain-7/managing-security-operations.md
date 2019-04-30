@@ -224,3 +224,136 @@ The cloud deployment model also affects the breakdown of responsibilities of the
   * Monitor backups for errors and use them as a guide to gauge the lifetime in your environment. When a tape begins to generate errors, technicians should rotate it out of use.
 
   * Tapes are commonly destroyed in bulk shredders or incinerators.
+
+## Managing Configuration
+
+Configuration management helps ensure that systems are deployed in a secure consistent state and that they stay in a secure consistent state throughout their lifetime. Baselines and images are commonly used to deploy systems.
+
+### Baselining
+
+A baseline is a starting point. Within the context of configuration management, it is the starting configuration for a system. Administrators often modify the baseline after deploying systems to meet different requirements.
+
+Baselines can be created with checklists but those are prone to human errors due to manual nature. A better alternative is the use of scripts and automated operating system tools to implement baselines. *Example* Microsoft operating systems include Group Policy.
+
+### Using images for Baselining
+
+Many organizations use images to deploy baselines. Below image show the process:
+
+![alt text](imagebaselining.jpg)
+
+*Another Example* Norton Ghost by Symantec are different from the steps to capture and deploy images using Microsoft’s Windows Deployment Services (WDS).
+
+Organizations typically protect the baseline images to ensure that they aren’t modified. In a worst-case scenario, malware can be injected into an image and then deployed to systems within the network.
+
+## Managing Change
+
+  * Deploying systems in a secure state is a good start. However, it’s also important to ensure that systems retain that same level of security. *Change management* helps reduce unanticipated outages caused by unauthorized changes.
+
+  * The primary goal of change management is to ensure that changes do not cause outages. Change management processes ensure that appropriate personnel review and approve changes before implementation, and ensure that personnel test and document the changes.
+
+  * Organizations constantly seek the best balance between security and usability, and there are instances when an organization makes conscious decisions to improve performance or usability of a system by weakening security. However, change management helps ensure that an organization takes the time to evaluate the risk of weakening security and compare it to the benefits of increased usability.
+
+  * Unauthorized changes directly affect the A in the CIA Triad–availability. Additionally, some changes can weaken or reduce security. 
+
+  * Many of the configuration and change management concepts in use today are derived from ITIL (formally an acronym for Information Technology Infrastructure Library) 
+
+### Security Impact Analysis
+
+  * A change management process ensures that personnel can perform a security impact analysis. Experts evaluate changes to identify any security impacts before personnel deploy the changes in a production environment.
+
+  * Common tasks within a change management process are as follows:
+
+    * Request the change
+    * Review the change
+    * Approve/reject the change
+    * Test the change
+    * Schedule and implement the change
+    * Document the change
+
+  * There may be instances when an emergency change is required. *Example* due to an attack or malware infection. Administrator still needs to document the changes.
+
+  * Change document can be used to reverse the change and be a road map for changes in other system.
+
+  * Change management control is a mandatory element for some security assurance requirements (SARs) in the ISO Common Criteria but many organizations don’t require compliance with ISO Common Criteria but its a good-to-have procedure cause it provide security against unauthorized changes.
+
+### Versioning
+
+  * Versioning typically refers to version control used in software configuration management. 
+
+  * Its a labeling or numbering system, 1.0 is a first major release, 1.1 is a minor release and 2.0 would be the next major release.
+
+  * This helps keep track of changes over time to deployed software.
+
+### Configuration Documentation
+
+  * Configuration documentation identifies the current configuration of systems. 
+
+  * It identifies who is responsible for the system and the purpose of the system, and lists all changes applied to the baseline.
+
+## Managing Patches and Reducing Vulnerabilities
+
+Patch management and vulnerability management processes work together to help protect an organization against emerging threats. Bugs and security vulnerabilities are routinely discovered in operating systems and applications. As they are discovered, vendors write and test patches to remove the vulnerability. Patch management ensures that appropriate patches are applied, and vulnerability management helps verify that systems are not vulnerable to known threats.
+
+### Systems to Manage
+
+  * Devices that are included are:
+
+    * Workstations and Servers
+
+    * Network infrastructure systems such as routers, switches, firewalls, appliances (such as a unified threat management appliance), and printers.
+
+    * Embedded systems are any devices that have a central processing unit (CPU), run an operating system, and have one or more applications designed to perform one or more functions. Examples include camera systems, smart televisions, household appliances (such as burglar alarm systems, wireless thermostats, and refrigerators), automobiles, medical devices, and more. These devices are sometimes referred to as the Internet of Things (IoT).
+
+    * Mobile devices (such as smartphones and tablets) if they are managed by company policies.
+
+### Patch Management
+
+  * Patch is a blanket term for any type of code written to correct a bug or vulnerability or improve the performance of existing software. The software can be either an operating system or an application. Patches are sometimes referred to as updates, quick fixes, and hot fixes. In the context of security, administrators are primarily concerned with security patches, which are patches that affect the vulnerability of a system.
+
+  * These are the common steps within an effective patch management program:
+
+    * **Evaluate patches**
+    * **Test patches** `unwanted side effects`
+    * **Approve the patches** 
+    * **Deploy the patches** 
+    * **Verify that patches are deployed** `administrators regularly test and audit systems to ensure that they remain patched. Many deployment tools include the ability to audit systems`
+
+  * *Patch Tuesday* by Microsoft, happens on second Tuesday of the month, so some attackers have reverse-engineered patches to identify the underlying vulnerability and then created methods to exploit the vulnerability. These attacks often start within a day after Patch Tuesday, giving rise to the term *exploit Wednesday*. 
+
+  * As an example, the WannaCry ransomware attack in May 2017 infected more than 230,000 systems within a day. The attack exploited systems that didn’t have a Microsoft security update that was released in March 2017, about two months earlier.
+
+### Vulnerability Management
+
+  * Vulnerability management refers to regularly identifying vulnerabilities, evaluating them, and taking steps to mitigate risks associated with them.
+
+  *  Two common elements of a vulnerability management program are routine vulnerability scans and periodic vulnerability assessments.
+
+#### Vulnerability Scans
+
+  * Vulnerability scanners are software tools used to test systems and networks for known security issues.
+
+  * Attackers uses these to exploit the weakness, but many admin use these tools to detect vulnerability and patch them before attacker can exploit it. 
+
+  * Vulnerability Scans have an online database so admins have to keep there software up-to-date to get updates about latest vulnerability. Its like Anti-Virus signatures.
+
+  * Nessus is a popular vulnerability scanner managed by Tenable Network Security. 
+
+  * Vulnerability Scans only not provide network scan but can check database (if default password is working or not), website input validation for SQL injection attacks etc. 
+
+  * There may be situations where it isn’t feasible or desirable to apply the patch. Management can choose to accept a risk rather than mitigate it. Any risk that remains after applying a control is residual risk. Any losses that occur from residual risk are the responsibility of management.
+
+#### Vulnerability Assessments
+
+  * A vulnerability assessment will often include results from vulnerability scans, but the assessment will do more. For example, an annual vulnerability assessment may analyze all of the vulnerability scan reports from the past year to determine if the organization is addressing vulnerabilities.
+
+  * Vulnerability assessment are often done as part of risk assessment. To determine risk vulnerability assessment can look into other ares like how sensitive information is marked, handled, stored, and destroyed throughout its lifetime to address potential vulnerabilities.
+
+  * Many penetration tests start with a vulnerability assessment.
+
+### Common Vulnerability And Exposures
+
+  * Vulnerabilities are commonly referred to using the Common Vulnerability and Exposures (CVE) dictionary
+
+  * MITRE maintains the CVE database, and you can view it here: [cve.mitre.org](https://cve.mitre.org/)
+
+  * As an example, the WannaCry ransomware, mentioned earlier, took advantage of vulnerability in unpatched Windows systems, and Microsoft released Microsoft Security Bulletin MS17-010 with updates to prevent the attack. The same vulnerability is identified as CVE-2017-0143.
