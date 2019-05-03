@@ -1,3 +1,15 @@
+
+
+<!-- MarkdownTOC -->
+
+- Managing Incident Response
+	- Defining an Incident
+	- Incident response steps
+		- Detection
+
+<!-- /MarkdownTOC -->
+
+
 ## Managing Incident Response
 
 Regardless of best efforts incident do occur. The primary goal of incident response is to minimize the impact on the organization.
