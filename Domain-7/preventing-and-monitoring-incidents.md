@@ -23,3 +23,13 @@ As per CISSP objective below are steps involved:
 
 Note: Incident response does not include a counterattack against the attacker, as most of the time its illegal and plus attacker would be spoofing identity behind a innocent user.
 
+#### Detection
+
+Common technique to detect potential threats are:
+
+* Intrusion detection and prevention systems - Alert admins
+* Anti-malware software
+* Many automated tools regularly scan audit logs looking for predefined events, such as the use of special privileges
+* End user report an event
+
+
