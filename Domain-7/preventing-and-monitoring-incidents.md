@@ -323,6 +323,33 @@ Additional security controls to protect networks
     * Identify employees’ ability to detect and respond to attacks in real time
     * Identify additional controls that can be implemented to reduce risk
 
-#### Risks of Penetration Testing
+**Risks of Penetration Testing**
 
-  * 
+  * A significant danger with penetration tests is that some methods can cause outages.
+
+  * Whenever possible, testers perform penetration tests on a test system instead of a live production system.
+
+**Obtaining Permission for Penetration Testing**
+ 
+  * Penetration testing should only be performed after careful consideration and approval of senior management. Many security professionals insist on getting this approval in writing with the risks spelled out. Performing unapproved security testing could cause productivity losses and trigger emergency response teams.
+
+**Penetration-Testing Techniques** 
+ 
+  * ***Black-Box Testing by Zero-Knowledge Team*** `publicly available info`
+  
+  * ***White-Box Testing by Full-Knowledge Team*** `patches and upgrade installed` `config of relevant devices` `if application, they may have access to the code` Also called **crystal-box or clear-box testing**
+
+  * ***Gray-Box Testing by Partial-Knowledge Team*** `given information on the network design and configuration details so that they can focus on attacks and vulnerabilities for specific targets`
+
+  * Security professional incharge of safeguarding the infra should not ideally be doing pentest, as they would have some bias or blind spots or gaps in their understanding, estimation, or capabilities with certain security subjects.
+
+**Protect Reports** 
+
+  * Penetration testers will provide a report documenting their results, and this report should be protected as sensitive information. The report will outline specific vulnerabilities and how these vulnerabilities can be exploited. It will often include recommendations on how to mitigate the vulnerabilities. If these results fall into the hands of attackers before the organization implements the recommendations, attackers can use details in the report to launch an attack.
+
+**Ethical Hacking**
+
+  * Ethical hacking is often used as another name for penetration testing. An ethical hacker is someone who understands network security and methods to breach security but does not use this knowledge for personal gain. Instead, an ethical hacker uses this knowledge to help organizations understand their vulnerabilities and take action to prevent malicious attacks. An ethical hacker will always stay within legal limits.
+
+  * Ethical hackers will learn about and often use the same tools and techniques used by attackers. However, they do not use them to attack systems. Instead, they use them to test systems for vulnerabilities and only after an organization has granted them explicit permission to do so.
+
