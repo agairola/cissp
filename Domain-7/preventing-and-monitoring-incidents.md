@@ -218,3 +218,111 @@ There is no one single step you can take to avoid all attacks but here is few ke
 #### IDS Response
 
   * When the IDS detects an event, it triggers an alarm or alert. It can then respond using a passive or active method. A *passive response* logs the event and sends a notification. An *active response* changes the environment to block the activity in addition to logging and sending a notification.
+
+#### Host- and Network-Based IDSs
+
+  * IDS types are commonly classified as host based and network based. A *host-based IDS (HIDS)* monitors a single computer or host. A *network-based IDS (NIDS)* monitors a network by observing network traffic patterns.
+
+  * Another type of IDS which is uncommon is the use of Application-based IDS, which is specific type of network based IDS to monitor traffic between two servers. *Example:* traffic between a web server and database.
+
+  * ***Host-Based IDS*** 
+
+    * An HIDS monitors activity on a single computer, including process calls and information recorded in system, application, security, and host-based firewall logs. Its like an anti-malware and some HIDS solution have anti-malware anti-malware capabilities. 
+
+    * *Some Disadvantages* `Admin overhead to manage` `resource intensive` `easier to intrudure to detect and disable`
+
+  * ***Network-Based IDS***
+
+     * A NIDS monitors and evaluates network activity to detect attacks or event anomalies. A single NIDS can monitor a large network by using remote sensors to collect data at key network locations that send data to a central management console and/or a SIEM. These sensors can monitor traffic at routers, firewalls, network switches that support port mirroring, and other types of network taps.
+
+     * TLS traffic (which is almost 75% of Internet traffic) can be a an issue for NIDS, as they cannot inspect the encrypted communication. To tackle this problem some admin deploy *SSL Decryptors*, its like a SSL proxy in the path. But APTs at times encrypt the traffic on the client before sending it to the server which NIDS cannot decrypt.
+
+#### Intrusion Prevention Systems
+
+  * An intrusion prevention system (IPS) is a special type of active IDS that attempts to detect and block attacks before they reach target systems. It’s sometimes referred to as an intrusion detection and prevention system (IDPS).
+  
+  * IPS is placed in-line with the traffic as compared to IDS which is not in-line and receives copy of traffic for analysis.
+
+### Specific Preventive Measures
+
+Additional security controls to protect networks
+
+#### Honeypots/Honeynets
+
+  * *Honeypots* are individual computers created as a trap for intruders. A *honeynet* is two or more networked honeypots used together to simulate a network. They look and act like legitimate systems, but they do not host data of any real value for an attacker.
+
+  * Longer intruder is busy attacking honeypot, better information would be available to administrator and/or IDS system to detect the unique pattern in attackers traffic. Many security researches thinks that honeypots are effective countermeasure against zero-day attacks.
+
+  * Mostly hosted on virtual machines (VMs)
+
+  * The use of honeypots raises the issue of *enticement versus entrapment*, enticement is legal and enticed attackers make their own decisions to perform illegal or unauthorized actions. Whereas entrapment is when you trick or encourage someone into performing an illegal or unauthorized action. Laws vary in different countries so it’s important to understand local laws related to enticement and entrapment.
+
+#### Understanding Pseudo Flaws
+
+  * Pseudo flaws are false vulnerabilities or apparent loopholes intentionally implanted in a system in an attempt to tempt attackers. They are often used on honeypot systems to emulate well-known operating system vulnerabilities
+  
+  * Sophisticated pseudo flaw mechanisms actually simulate the penetration and convince the attacker that they have gained additional access privileges to a system. 
+
+#### Understanding Padded Cells
+
+  * A padded cell system is similar to a honeypot, but it performs intrusion isolation using a different approach. When an IDPS detects an intruder, that intruder is automatically transferred to a padded cell. The padded cell has the look and feel of an actual network, but the attacker is unable to perform any malicious activities or access any confidential data from within the padded cell.
+
+#### Warning Banners
+  
+  * Warning banners inform users and intruders about basic security policy guidelines. They typically mention that online activities are audited and monitored, and often provide reminders of restricted activities. In most situations, wording in banners is important from a legal standpoint because these banners can legally bind users to a permissible set of actions, behaviors, and processes.
+
+  * Warning banners inform both authorized and unauthorized users. These banners typically remind authorized users of the content in acceptable-use agreements.
+
+#### Anti-malware
+
+  * The most important protection against malicious code is the use of anti-malware software with up-to-date signature files and heuristic capabilities. Attackers regularly release new malware and often modify existing malware to prevent detection by anti-malware software. 
+
+  * Vendors used to provider signature updates weekly, now-a-days the updates are done almost daily or even multiple times a day is need be.
+
+  * Many organizations use a multipronged approach to block malware and detect any malware that gets in. Firewalls with content-filtering capabilities (or specialized content-filter appliances) are commonly used at the boundary between the internet and the internal network to filter out any type of malicious code. Specialized anti-malware software is installed on email servers to detect and filter any type of malware passed via email. Additionally, anti-malware software is installed on each system to detect and block malware. Organizations often use a central server to deploy anti-malware software, download updated definitions, and push these definitions out to the clients.
+  
+  * Following the principle of least privilege also helps, cause even if malware compromise the system, it rights would be restricted to user's permission.
+
+  * Educating users about the dangers of malicious code, how attackers try to trick users into installing it, and what they can do to limit their risks is another protection method. 
+
+#### Whitelisting and Blacklisting
+
+  * Whitelisting identifies a list of applications authorized to run on a system, and blacklisting identifies a list of applications that are not authorized to run on a system. They can also help prevent malware infections. 
+
+  * Some whitelists identify applications using a hashing algorithm to create a hash. However, if an application is infected with a virus, the virus effectively changes the hash, so this type of whitelist blocks infected applications from running too.
+
+#### Firewalls
+
+  * Firewalls provide protection to a network by filtering traffic.
+
+  * *Basic firewalls* filter traffic based on IP addresses, ports, and some protocols using protocol numbers. 
+
+  * *Second-generation firewalls* add additional filtering capabilities like application-level gateway filtering.
+
+  * *Third-generation firewalls*  also called stateful inspection firewalls and dynamic packet filtering firewalls filter traffic based on its state within a stream of traffic.
+
+  * A *next-generation firewall* functions as a unified threat management (UTM) device and combines several filtering capabilities. It includes traditional functions of a firewall such as packet filtering and stateful inspection. However, it is able to perform packet inspection techniques, allowing it to identify and block malicious traffic. It can filter malware using definition files and/or whitelists and blacklists. It also includes intrusion detection and/or intrusion prevention capabilities.
+
+#### Sandboxing
+
+  * Sandboxing provides a security boundary for applications and prevents the application from interacting with other applications. Anti-malware applications use sandboxing techniques to test unknown applications. If the application displays suspicious characteristics, the sandboxing technique prevents the application from infecting other applications or the operating system.
+
+#### Third-Party Security Services
+
+  * Some organizations outsource security services to a third party, which is an individual or organization outside the organization. This can include many different types of services such as auditing and penetration testing. *Example*  Payment Card Industry Data Security Standard (PCI DSS) for organizations processing transactions with major credit cards. And PCI DSS requires organizations to ensure that service providers also comply with PCI DSS requirements.
+
+#### Penetration Testing
+
+  * Penetration testing is another preventive measure an organization can use to counter attacks. A penetration test (often shortened to pentest) mimics an actual attack in an attempt to identify what techniques attackers can use to circumvent security in an application, system, network, or organization. It may include vulnerability scans, port scans, packet sniffing, DoS attacks, and social-engineering techniques.
+
+  * **Standard/Guideline** *NIST SP 800-115, “Technical Guide to Information Security Testing and Assessment,”* includes a significant amount of information about testing, including penetration testing.
+
+  * Here are some of the goals of a penetration test:
+
+    * Determine how well a system can tolerate an attack
+    * Identify employees’ ability to detect and respond to attacks in real time
+    * Identify additional controls that can be implemented to reduce risk
+
+#### Risks of Penetration Testing
+
+  * 
