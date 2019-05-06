@@ -355,3 +355,47 @@ Additional security controls to protect networks
 
 ## Logging, Monitoring, and Auditing
 
+### Logging and Monitoring
+
+Logging and Monitoring helps an organization detect undesirable events that can negatively affect confidentiality, integrity, or availability of systems. It is also useful in reconstructing activity after an event has occurred to identify what happened and sometimes to prosecute those responsible for the activity.
+
+#### Logging Techniques
+
+  * Logging captures events, changes, messages, and other data that describe activities that occurred on a system. 
+
+  * Logs will commonly record details such as:
+    * what happened
+    * when it happened 
+    * where it happened
+    * who did it
+    * sometimes how it happened
+
+#### Common Log Types
+  
+  * *Security Logs*: `record access to resources` `admins might enable this logging for proprietary data`
+  
+  * *System Logs*:  `record system start or stop` `records service start or stop`
+
+  * *Application Logs*: `application dev can choose what to record`
+
+  * *Firewall Logs*: `traffic permitted or denied by the firewall` `mostly its 5 tuple (IP addr etc) not the content of the packet`
+
+  * *Proxy Logs*: `record user website access info` `how much time user spend`
+
+  * *Change Logs*: `Change logs record change requests, approvals, and actual changes to a system as a part of an overall change management process` `Change logs are useful to track approved changes` 
+
+#### Protecting Log Data
+
+  * Personnel within the organization can use logs to re-create events leading up to and during an incident, but only if the logs haven’t been modified. If attackers can modify the logs, they can erase their activity, effectively nullifying the value of the data. The files may no longer include accurate information and may not be admissible as evidence to prosecute attackers. With this in mind, it’s important to protect log files against unauthorized access and unauthorized modification.
+
+  * **Protection**
+
+    * Store them in a SIEM
+    * Limit access via permissions
+    * Organizations often have strict policies mandating backups of log files. Additionally, these policies define retention times.
+
+  * **Standard/Guidelines:** As per National Institute of Standards and Technology (NIST) publishes a significant amount of information on IT security, including Federal Information Processing Standards (FIPS) publications. The Minimum Security Requirements for Federal Information and Information Systems ([FIPS 200](https://csrc.nist.gov/csrc/media/publications/fips/200/final/documents/fips-200-final-march.pdf)) specifies the following as the minimum security requirements for audit data:
+
+      *Create, protect, and retain information system audit records to the extent needed to enable the monitoring, analysis, investigation, and reporting of unlawful, unauthorized, or inappropriate information system activity.*
+
+      *Ensure that the actions of individual information system users can be uniquely traced to those users so they can be held accountable for their actions.* 
