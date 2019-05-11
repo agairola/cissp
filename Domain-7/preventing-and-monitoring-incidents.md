@@ -399,3 +399,35 @@ Logging and Monitoring helps an organization detect undesirable events that can 
       *Create, protect, and retain information system audit records to the extent needed to enable the monitoring, analysis, investigation, and reporting of unlawful, unauthorized, or inappropriate information system activity.*
 
       *Ensure that the actions of individual information system users can be uniquely traced to those users so they can be held accountable for their actions.* 
+
+#### The Role of Monitoring
+
+Monitoring provides several benefits for an organization, including increasing accountability, helping with investigations, and basic troubleshooting.
+
+**Audit Trails**
+
+Audit trails are records created when information about events and occurrences is stored in one or more databases or log files. They provide a record of system activity and can reconstruct activity leading up to and during security events. Security professionals extract information about an incident from an audit trail to prove or disprove culpability, and much more. 
+
+**Monitoring and Accountability**
+
+Monitoring is a necessary function to ensure that subjects (such as users and employees) can be held accountable for their actions and activities. Users claim an identity (such as with a username) and prove their identity (by authenticating), and audit trails record their activity while they are logged in. Monitoring and reviewing the audit trail logs provides accountability for these users.
+
+It promotes positive user behavior and compliance.
+
+Legislation often requires specific monitoring and accountability practices. This includes laws such as the **Sarbanes–Oxley Act** of 2002, the Health Insurance Portability and Accountability Act (**HIPAA**), and European Union (**EU**) **privacy laws** that many organizations must abide by.
+
+**Monitoring and Investigations**
+
+
+**Monitoring and Problem Identification**
+
+**Monitoring Techniques**
+
+**Security Information and Event Management**
+
+**Sampling**
+
+**Clipping Levels**
+
+**Other Monitoring Tools**
+
