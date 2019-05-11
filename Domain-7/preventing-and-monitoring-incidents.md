@@ -480,3 +480,92 @@ Advanced attackers can encrypt data which bypasses these attempts. However, it�
     * Endpoint-Based DLP - `files stored on a system as well as files sent to external devices, such as printers`
 
   * **Drawback** A DLP system doesn’t have the ability to decrypt data. Major advance persistent threat (ATP) include Fancy Bear ([APT 28](https://en.wikipedia.org/wiki/Fancy_Bear)) and Cozy Bear ([APT 29](https://en.wikipedia.org/wiki/Cozy_Bear)).
+
+#### Steganography
+
+  * Steganography is the practice of embedding a message within a file. For example, individuals can modify bits within a picture file to embed a message. The change is imperceptible to someone looking at the picture, but if other people know to look for the message, they can extract it.
+
+  * It is possible to detect steganography attempts if you have the original file and a file you suspect has a hidden message. If you use a hashing algorithm such as Secure Hash Algorithm 3 (SHA-3), you can create a hash of both files. If the hashes are the same, the file does not have a hidden message. However, if the hashes are different, it indicates the second file has been modified. Forensic analysis techniques might be able to retrieve the message.
+
+#### Watermarking
+
+  * Watermarking is the practice of embedding an image or pattern in paper that isn’t readily perceivable. It is often used with currency to thwart counterfeiting attempts. Similarly, organizations often use watermarking in documents.
+
+  * From the perspective of egress monitoring, DLP systems can detect the watermark in unencrypted files. 
+
+  * A digital watermark is a secretly embedded marker in a digital file. For example, some movie studios digitally mark copies of movies sent to different distributors.
+
+### Auditing to Assess Effectiveness
+
+*Auditing* is a methodical examination or review of an environment to ensure compliance with regulations and to detect abnormalities, unauthorized occurrences, or crimes. It verifies that the security mechanisms deployed in an environment are providing adequate security for the environment. The test process ensures that personnel are following the requirements dictated by the security policy or other regulations, and that no significant holes or weaknesses exist in deployed security solutions.
+
+*Auditors* perform the auditing.
+
+#### Inspection Audits
+
+Two important audits within the context of access control are access review audits and user entitlement audits.
+
+It’s important to clearly define and adhere to the frequency of audit reviews. Frequency is related to level of risk. Auditing is key element of *due care*. 
+
+#### Access Review Audits
+
+Many organizations perform periodic access reviews and audits to ensure that object access and account management practices support the security policy. These audits verify that users do not have excessive privileges and that accounts are managed appropriately. They ensure that secure processes and procedures are in place, that personnel are following them, and that these processes and procedures are working as expected.
+
+The access review verifies that a policy exists and that personnel are following it. When terminated employees have continued access to the network after an exit interview, they can easily cause damage. For example, an administrator can create a separate administrator account and use it to access the network even if the administrator’s original account is disabled.
+
+#### User Entitlement Audits
+
+User entitlement refers to the privileges granted to users. Users need rights and permissions (privileges) to perform their job, but they only need a limited number of privileges. In the context of user entitlement, the principle of least privilege ensures that users have only the privileges they need to perform their job and no more.
+
+#### Audits of Privileged Groups
+
+Many organizations use groups as part of a Role Based Access Control model. It’s important to limit the membership of groups that have a high-level of privileges, such as administrator groups
+
+#### Dual Administrator Accounts
+
+Many organizations require administrators to maintain two accounts. They use one account for regular day-to-day use. A second account has additional privileges and they use it for administrative work. This reduces the risk associated with this privileged account.
+
+### Security Audits and Reviews 
+
+Security audits and reviews help ensure that an organization has implemented security controls properly. Access review audits (presented earlier in this chapter) assess the effectiveness of access controls. These reviews ensure that accounts are managed appropriately, don’t have excessive privileges, and are disabled or deleted when required. In the context of the Security Operations domain, security audits help ensure that management controls are in place. The following list includes some common items to check:
+
+
+  * Patch Management
+  * Vulnerability Management
+  * Configuration Management
+  * Change Management
+
+### Reporting Audit Results 
+
+The actual formats used by an organization to produce reports from audits vary. However, reports should address a few basic or central concepts:
+
+  * The purpose of the audit
+  * The scope of the audit
+  * The results discovered or revealed by the audit
+
+In addition to these basic concepts, audit reports often include many details specific to the environment, such as time, date, and a list of the audited systems. They can also include a wide range of content that focuses on
+
+  * Problems, events, and conditions
+  * Standards, criteria, and baselines
+  * Causes, reasons, impact, and effect
+  * Recommended solutions and safeguards
+
+#### Protecting Audit Results
+
+  * They should be assigned a classification label and only those people with sufficient privilege should have access to audit reports. This includes high-level executives and security personnel involved in the creation of the reports or responsible for the correction of items mentioned in the reports.
+
+  * Auditors sometimes create a separate audit report (overview or summary of findings) with limited data for other personnel. This modified report provides only the details relevant to the target audience. 
+
+#### Distributing Audit Reports
+
+  * It’s common to file a signed confirmation of receipt. When an audit report contains information about serious security violations or performance issues, personnel escalate it to higher levels of management for review, notification, and assignment of a response to resolve the issues.
+
+#### Using External Auditors
+
+  * Many organizations choose to conduct independent audits by hiring external security auditors. Additionally, some laws and regulations require external audits. External audits provide a level of objectivity that an internal audit cannot provide, and they bring a fresh, outside perspective to internal policies, practices, and procedures.
+
+  * An *interim report* is a written or verbal report given to the organization about any observed security weaknesses or policy/procedure mismatches that demand immediate attention. Auditors issue interim reports whenever a problem or issue is too important to wait until the final audit report.
+
+  * `exit conference` findings and discuss resolution issues 
+
+  * After the organization receives the final audit report, internal auditors review it and make recommendations to senior management based on the report. Senior management is responsible for selecting which recommendations to implement and for delegating implementation requirements to internal personnel.
