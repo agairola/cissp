@@ -418,16 +418,65 @@ Legislation often requires specific monitoring and accountability practices. Thi
 
 **Monitoring and Investigations**
 
+Audit trails give investigators the ability to reconstruct events long after they have occurred. They can record access abuses, privilege violations, attempted intrusions, and many different types of attacks. After detecting a security violation, security professionals can reconstruct the conditions and system state leading up to the event, during the event, and after the event through a close examination of the audit trail.
+
+Setup Network Time Protocol (NTP) for accurate timestamp in the logs. 
+
+NIST NTP Authentication and service, [link](https://www.nist.gov/pml/time-and-frequency-division/time-services/nist-authenticated-ntp-service)
 
 **Monitoring and Problem Identification**
 
+Audit trails can record system failures, OS bugs, and software errors in addition to malicious attacks. Records contents of memory when an application or system crashes. 
+
 **Monitoring Techniques**
+
+*Monitoring* is the process of reviewing information logs looking for something specific. 
+
+*Log analysis* is a detailed and systematic form of monitoring in which the logged information is analyzed for trends and patterns as well as abnormal, unauthorized, illegal, and policy-violating activities. Log analysis isn’t necessarily in response to an incident but instead a periodic task, which can detect potential issues. Due to massive log size, admin prefer this to be automated. 
 
 **Security Information and Event Management**
 
+`Security information and event management (SIEM)`
+`Security event management (SEM)`
+`Security information management (SIM)`
+
+These tools provide real-time analysis of events occurring on systems throughout an organization. They include agents installed on remote systems that monitor for specific events known as alarm triggers. When the trigger occurs, the agents report the event back to the central monitoring software.
+
+SIEMs uses advanced analytic tools to detect abnormalities and sends alerts to security administrators.
+
+Some monitoring tools are also used for inventory and status purposes
+
+Software monitoring watches for attempted or successful installations of unapproved software, use of unauthorized software, or unauthorized use of approved software
+
 **Sampling**
+
+Sampling is a form of data reduction that allows someone to glean valuable information by looking at only a small sample of data in an audit trail. There is always a risk that sampled data is not an accurate representation of the whole body of data, and statistical sampling can identify the margin of error.
 
 **Clipping Levels**
 
+Clipping is a form of nonstatistical sampling. It selects only events that exceed a clipping level, which is a predefined threshold for the event. The system ignores events until they reach this threshold.
+
+As an example, failed logon attempts are common in any system as users can easily enter the wrong password once or twice. Instead of raising an alarm for every single failed logon attempt, a clipping level can be set to raise an alarm only if it detects five failed logon attempts within a 30-minute period. Many account lockout controls use a similar clipping level. They don’t lock the account after a single failed logon. Instead, they count the failed logons and lock the account only when the predefined threshold is reached.
+
+In other words, the clipping level causes the system to ignore routine events and only raise an alert when it detects serious intrusion patterns.
+
 **Other Monitoring Tools**
 
+Other technique includes, closed-circuit television (CCTV), keystroke monitoring, traffic analysis monitoring, trend analysis monitoring, and monitoring to prevent data loss.
+
+### Egress monitoring
+
+Egress monitoring refers to monitoring outgoing traffic to prevent data exfiltration, which is the unauthorized transfer of data outside the organization. Some common methods used to prevent data exfiltration are using data loss prevention techniques, looking for steganography attempts, and using watermarking to detect unauthorized data going out.
+
+Advanced attackers can encrypt data which bypasses these attempts. However, it’s also possible to include tools that monitor the amount of encrypted data sent out of the network.
+
+#### Data Loss Prevention
+
+  * These systems have the capability of scanning unencrypted data looking for keywords and data patterns. For example, imagine that an organization uses data classifications of Confidential, Proprietary, Private, and Sensitive. A DLP system can scan files for these words and detect them.
+
+  * There are two primary types of DLP systems: network-based and endpoint-based.
+
+    * Network-Based DLP - `Edge of the network`
+    * Endpoint-Based DLP - `files stored on a system as well as files sent to external devices, such as printers`
+
+  * **Drawback** A DLP system doesn’t have the ability to decrypt data. Major advance persistent threat (ATP) include Fancy Bear ([APT 28](https://en.wikipedia.org/wiki/Fancy_Bear)) and Cozy Bear ([APT 29](https://en.wikipedia.org/wiki/Cozy_Bear)).
