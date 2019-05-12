@@ -97,4 +97,16 @@ A *single point of failure (SPOF)* is any component that can cause an entire sys
 
 ### Protecting Hard Drives
 
+A common way that fault tolerance and system resilience is added for computers is with a RAID array. 
 
+> Redundant Array of Inexpensive Disks (RAID) 
+
+**RAID-0** This is also called striping. It uses two or more disks and improves the disk subsystem performance, but it does not provide fault tolerance.
+
+**RAID-1** This is also called mirroring. It uses two disks, which both hold the same data. If one disk fails, the other disk includes the data so a system can continue to operate after a single disk fails.
+
+**RAID-5** This is also called striping with parity. It uses three or more disks with the equivalent of one disk holding parity information. If any single disk fails, the RAID array will continue to operate, though it will be slower.
+
+**RAID-10** This is also known as RAID 1 + 0 or a stripe of mirrors, and is configured as two or more mirrors (RAID-1) configured in a striped (RAID-0) configuration. It uses at least four disks but can support more as long as an even number of disks are added. It will continue to operate even if multiple disks fail, as long as at least one drive in each mirror continues to function.
+
+Software-based RAID is inexpensive to implement, but can reduce overall system performance.
