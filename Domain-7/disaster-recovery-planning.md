@@ -128,4 +128,43 @@ Fault tolerance can be added for power sources with an *uninterruptible power su
 Fluctuations in commercial power is problem, which include:
 
 *Spike* is a quick instance of an increase in voltage.
-*Sag* a quick instance of a reduction in voltage. If power stays high for a long period of time, it’s called a surge rather than a spike. If it remains low for a long period of time, it’s called a brownout. Occasionally, power lines have noise on them called transients that can come from many different sources.
+*Sag* is a quick instance of a reduction in voltage. 
+*Surge* is when power stays high for a long period of time.
+*Brownout* is when power remains low for a long period of time.
+*Transients* is when occasionally power lines have noise on them.
+
+*Useful*: `very basic UPS` for surge protection and battery backup. `Line-interactive UPS` includes variable-voltage transformer and battery backup.
+
+### Trusted Recovery
+
+Trusted recovery provides assurances that after a failure or crash, the system is just as secure as it was before the failure or crash occurred
+
+Systems can be designed so that they fail in a fail-secure state or a fail-open state. A *fail-secure* system will default to a secure state in the event of a failure, blocking all access. A *fail-open* system will fail in an open state, granting all access. The choice is dependent on whether *security or availability* is more important after a failure. Example is a firewall in fail-open with everything allowed when its recovering, whereas firewall blocking everything when its recovering - fail-secure.
+
+Two elements of the recovery process are addressed to implement a trusted solution:
+
+* Failure preparation - system resilience and fault-tolerant methods in addition to a reliable backup solution
+* Process of system recovery - reboot into a single-user, nonprivileged state. restore all affected files and service activity.
+
+Common Criteria defines four types of system recovery:
+
+* Manual Recovery 
+* Automated Recovery - `atleast one type of failure` - eg. RAID takes care of storage but not the server recovery itself.
+* Automated Recovery without Undue Loss - `automated recovery` `recover data`
+* Function Recovery - `recover specific functions` 
+
+### Quality of Service
+
+Quality of service (QoS) controls protect the integrity of data networks under load.
+
+Some of the factors contributing to QoS are as follows:
+
+* *Bandwidth*
+* *Latency* 
+* *Jitter* - The variation in latency between different packets.
+* *Packet Loss* 
+* *Interference* - Electrical noise, faulty equipment etc
+
+In addition to controlling these factors, QoS systems often prioritize certain traffic types that have low tolerance for interference and/or have high business requirements.
+
+
