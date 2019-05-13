@@ -110,3 +110,22 @@ A common way that fault tolerance and system resilience is added for computers i
 **RAID-10** This is also known as RAID 1 + 0 or a stripe of mirrors, and is configured as two or more mirrors (RAID-1) configured in a striped (RAID-0) configuration. It uses at least four disks but can support more as long as an even number of disks are added. It will continue to operate even if multiple disks fail, as long as at least one drive in each mirror continues to function.
 
 Software-based RAID is inexpensive to implement, but can reduce overall system performance.
+
+### Protecting Servers
+
+Fault tolerance can be added for critical servers with *failover* clusters. Below images shows multiple components put together to provide reliable web access for a heavily accessed website that uses a database.
+
+![alt text](failover.jpg)
+
+Above failover mechanism's like *load balancer* can be used in almost all Cloud provider. When designing cloud environments, be sure to consider the availability of data centers in different regions of the world. If you are already load balancing multiple servers, you may be able to place those servers in different geographic regions and availability zones within those regions to add resiliency in addition to scalability.
+
+> Similarly, some systems provide automatic fault tolerance for servers, allowing a server to fail without losing access to the provided service. *Example* domain controllers and databases that replicate among multiple data.
+
+### Protecting Power Sources
+
+Fault tolerance can be added for power sources with an *uninterruptible power supply (UPS),* a generator, or both. In general, a UPS provides battery-supplied power for a short period of time between 5 and 30 minutes, and a generator provides long-term power. The goal of a UPS is to provide power long enough to complete a logical shutdown of a system, or until a generator is powered on and providing stable power.
+
+Fluctuations in commercial power is problem, which include:
+
+*Spike* is a quick instance of an increase in voltage.
+*Sag* a quick instance of a reduction in voltage. If power stays high for a long period of time, it’s called a surge rather than a spike. If it remains low for a long period of time, it’s called a brownout. Occasionally, power lines have noise on them called transients that can come from many different sources.
