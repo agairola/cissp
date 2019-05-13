@@ -167,4 +167,14 @@ Some of the factors contributing to QoS are as follows:
 
 In addition to controlling these factors, QoS systems often prioritize certain traffic types that have low tolerance for interference and/or have high business requirements.
 
+## Recovery Strategy
 
+*Insurance* (Many insurance provide cybersecurity insurance for CIA assurance)
+
+  * Actual cash value (ACV) clause: compensation based on the fair market value of the items on the date of loss less all accumulated depreciation since the time of their purchase. 
+
+#### Business Unit and Functional Priorities
+
+  * You must identify and prioritize critical business functions as well so you can define which functions you want to restore after a disaster or failure and in what order.
+
+  * Business impact assessment (BIA): ` identifies vulnerabilities, develops strategies to minimize risk` `costs related to failures`
