@@ -178,3 +178,17 @@ In addition to controlling these factors, QoS systems often prioritize certain t
   * You must identify and prioritize critical business functions as well so you can define which functions you want to restore after a disaster or failure and in what order.
 
   * Business impact assessment (BIA): ` identifies vulnerabilities, develops strategies to minimize risk` `costs related to failures`
+
+#### Crisis Management
+
+  * Crisis management is a science and an art form. If your training budget permits, investing in crisis training for your key employees is a good idea. This ensures that at least some of your employees know how to handle emergency situations properly and can provide all-important “on-the-scene” leadership to panic-stricken co-workers.
+
+#### Emergency Communication
+
+  * When a disaster strikes, it is important that the organization be able to communicate internally as well as with the outside world.
+
+  * Communicate internally during a disaster so that employees know what is expected of them—whether they are to return to work or report to another location, for instance.
+
+  * Disaster damaged some or all normal means of communications, at that point, it’s too late to try to figure out other means of communicating both internally and externally.
+
+  
