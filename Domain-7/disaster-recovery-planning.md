@@ -167,7 +167,7 @@ Some of the factors contributing to QoS are as follows:
 
 In addition to controlling these factors, QoS systems often prioritize certain traffic types that have low tolerance for interference and/or have high business requirements.
 
-## Recovery Strategy
+### Recovery Strategy
 
 *Insurance* (Many insurance provide cybersecurity insurance for CIA assurance)
 
@@ -191,4 +191,75 @@ In addition to controlling these factors, QoS systems often prioritize certain t
 
   * Disaster damaged some or all normal means of communications, at that point, it’s too late to try to figure out other means of communicating both internally and externally.
 
-  
+#### Workgroup Recovery
+
+  * Goal: restoration of workgroups to the point that they can resume their activities in their usual work locations.
+
+  * To facilitate this effort, it’s sometimes best to develop separate recovery facilities for different workgroups. For example, if you have several subsidiary organizations that are in different locations and that perform tasks similar to the tasks that workgroups at your office perform, you may want to consider temporarily relocating those workgroups to the other facility and having them communicate electronically and via telephone with other business units until they’re ready to return to the main operations facility.
+
+#### Alternative Processing Sites
+
+  * One of the most important elements of the disaster recovery plan is the selection of alternate processing sites to be used when the primary sites are unavailable.
+
+  * ***Cold Site*** are standby facilities large enough to handle the processing load of an organization and equipped with appropriate electrical and environmental support systems, *example* large warehouse. A cold site has no computing facilities (hardware or software) pre-installed and also has no active broadband communications links beside few copper telephone link lines and/or standby links.
+
+    * Advantages: Relatively low cost
+    * Disadvantages: The time to activate a cold site is often measured in weeks, making timely recovery close to impossible and often yielding a false sense of security. It’s also worth observing that the substantial time, effort, and expense required to activate and transfer operations to a cold site make this approach the most difficult to test.
+
+  * ***Hot Site*** is the exact opposite of the cold site. In this configuration, a backup facility is maintained in constant working order, with a full complement of servers, workstations, and communications links ready to assume primary operations responsibilities. The servers and workstations are all preconfigured and loaded with appropriate operating system and application software. If the replication between sites is instantaneous then operators could move operations to the hot site at a moment’s notice. 
+
+  > If you use a hot site, never forget that it has copies of your production data. Be sure to provide that site with the same level of technical and physical security controls you provide at your primary site.
+
+    * Advantages: Level of protection is high
+    * Disadvantages: the cost is extremely high (double the cost)
+    * How to reduce:
+      * Outsource it to contractors (shared hot site). 
+      * Use hot site as development/test environment which is in use when it not actings as the backup site. 
+
+
+  * ***Warm sites*** occupy the middle ground between hot and cold sites for disaster recovery specialists. They always contain the equipment and data circuits necessary to rapidly establish operations. As with hot sites, this equipment is usually preconfigured and ready to run appropriate applications to support an organization’s operations. Unlike hot sites, however, warm sites do not typically contain copies of the client’s data. The main requirement in bringing a warm site to full operational status is the transportation of appropriate backup media to the site and restoration of critical data on the standby servers. Takes at least 12 hours from the time a disaster is declared to activate this site, this does not mean that anything less than 12 hours is hot site, hot site switchover is in few seconds or mins . 
+
+  * ***Mobile sites*** are nonmainstream alternatives to traditional recovery sites. They typically consist of self-contained trailers or other easily relocated units.
+
+  * A ***service bureau*** is a company that leases computer time. Service bureaus own large server farms and often fields of workstations. Any organization can purchase a contract from a service bureau to consume some portion of their processing capacity. Access can be on site or remote. *Drawback* is that they oversell their actual capacity by gambling that not all their contracts will be exercised at the same time.
+
+  * ***Cloud Computing*** as disaster recovery option option. Use infrastructure as a service (IaaS) as a backup service providers. 
+
+#### Mutual Assurance Agreements
+
+  * Mutual assistance agreements (MAAs), also called *reciprocal agreements*
+
+  * Under an MAA, two organizations pledge to assist each other in the event of a disaster by sharing computing facilities or other technological resources.
+
+  * Rarely implemented in real-world practice
+
+  * Drawbacks:
+
+    * Difficult to enforce, if a party backs-off from the agreement, then legal discourse is an option but that does not help during immediate DR.
+
+    * Orgs should be in close proximity, which makes this method ineffective in case of regional disaster like earthquake. 
+
+    * Confidentiality is always a major concern.
+
+#### Database Recovery
+
+We’ll cover the three main techniques used to create offsite copies of database content: electronic vaulting, remote journaling, and remote mirroring. 
+
+***Electronic Vaulting***
+
+  * Database backups are moved to a remote site using *bulk transfers*
+  * Entire database backup files are transferred
+  * Due to this you can notice significant delay between the time you declare a disaster and the time your database is ready for operation with current data.
+
+***Remote Journaling***
+
+  * With remote journaling, data transfers are performed in a more expeditious manner. Data transfers still occur in a bulk transfer mode, but they occur on a more frequent basis, usually once every hour and sometimes more frequently.
+  * Remote journaling setups transfer copies of the database transaction logs containing the transactions that occurred since the previous bulk transfer.
+
+***Remote Mirroring*** 
+
+  * A live database server is maintained at the backup site. So most expensive.
+  * Good method to implement in hot site.
+
+### Recovery Plan Development
+
