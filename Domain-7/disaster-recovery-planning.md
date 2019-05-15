@@ -263,3 +263,43 @@ We’ll cover the three main techniques used to create offsite copies of databas
 
 ### Recovery Plan Development
 
+Plan document should satisfies the operational needs of critical business units and falls within the resource, time, and expense constraints of the disaster recovery budget and available personnel.
+
+Multiple types of plan documents, intended for different audiences:
+
+* Executive summary providing a high-level overview of the plan
+* Department-specific plans
+* Technical guides for IT personnel responsible for implementing and maintaining critical backup systems
+* Checklists for individuals on the disaster recovery team
+* Full copies of the plan for critical disaster recovery team members
+
+**Standards/Guideline:**
+
+[Professional Practices](https://drii.org/resources/professionalpractices/EN)
+[BCI Good Practices Guideline](https://www.thebci.org/training-qualifications/good-practice-guidelines.html)
+[ISO 27001](https://www.iso.org/isoiec-27001-information-security.html)
+[NIST SP 800-34](https://csrc.nist.gov/publications/sp)
+
+#### Emergency Response
+
+  * A disaster recovery plan should contain simple yet comprehensive instructions for essential personnel to follow immediately upon recognizing that a disaster is in progress or is imminent. 
+
+  * Emergency-response plans are often put together in the form of checklists provided to responders. 
+
+  * Arrange the checklist tasks in order of priority, with the most important task first!
+
+#### Personnel and Communications
+
+  * A disaster recovery plan should also contain a list of personnel to contact in the event of a disaster. DRP team + personnel who execute critical disaster recovery tasks t
+
+  * Response checklist should include alternate means of contact (that is, pager numbers, mobile phone numbers, and so on) as well as backup contacts for each role should the primary contact be incommunicado or unable to reach the recovery site for one reason or another.
+
+#### Assessment
+
+  * When the disaster recovery team arrives on site, one of their first tasks is to assess the situation
+
+  * More detailed assessments will take place to gauge the effectiveness of disaster recovery efforts and prioritize the assignment of resources.
+
+#### Backup and Offsite Storage
+
+  * 
