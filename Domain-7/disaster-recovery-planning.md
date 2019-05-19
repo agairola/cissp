@@ -302,4 +302,112 @@ Multiple types of plan documents, intended for different audiences:
 
 #### Backup and Offsite Storage
 
-  * 
+  *  There are three main types of backups:
+
+  ![alt text](backups_methods_1.jpg)
+
+  ![alt text](backups_methods.jpg)
+
+  ![alt text](backups_methods_2.png)
+
+  *  A common strategy is to perform full backups over the weekend and incremental or differential backups on a nightly basis. 
+
+  * **Backup Tape Formats** 
+
+  Physical characteristics (defines the physical wear placed on the media) and the rotation cycle (frequency of backups and retention length) are two factors that a worthwhile backup solution should track and manage.
+
+  * **Disk-to-Disk (D2D) Backup** 
+
+  *Virtual tape libraries (VTL)* support the use of disks with this model by using software to make disk storage appear as tapes to backup software.
+
+  `managed service provider` `cloud provider`
+
+  * **Backup Best Practices**
+
+    - backups should be scheduled during the low peak periods (for example, at night)
+    - build sufficient capacity to handle a reasonable amount of growth over a reasonable amount of time
+    - deploy some form of real-time continuous backup, such as RAID, clustering, or server mirroring
+    - test your organization’s recovery processes
+
+  * **Tape Rotation**
+
+  Tape rotation strategies for backups: the Grandfather-Father-Son (GFS) strategy, the Tower of Hanoi strategy, and the Six Cartridge Weekly Backup strategy. 
+
+  To reduce manual effort implement using commercial backup software or a fully automated hierarchical storage management (HSM) system.
+
+#### Software Escrow Arrangements
+
+  * Developer provides copies of the application source code to an independent third-party organization. 
+  * This third party then maintains updated backup copies of the source code in a secure fashion. 
+  * The agreement between the end user and the developer specifies “trigger events,” such as the failure of the developer to meet terms of a service-level agreement (SLA) or the liquidation of the developer’s firm. 
+  * When a trigger event takes place, the third party releases copies of the application source code to the end user. The end user can then analyze the source code to resolve application issues or implement software updates.
+
+#### External Communication
+
+  * Contact vendors to provide supplies for DR
+  * Your clients wants to contact for reassurance.
+  * Public relations officials may need to contact the media or investment firms, and managers may need to speak to governmental authorities.
+
+#### Utilities
+
+  * Your disaster recovery plan should contain contact information and procedures to troubleshoot these services if problems arise during a disaster. 
+
+#### Logistics and Supplies 
+
+  * It’s also possible that the people will be living at those sites for an extended period of time and that the disaster recovery team will be responsible for providing them with food, water, shelter, and appropriate facilities. 
+
+#### Recovery vs Restoration
+
+  * *Recovery* involves bringing business operations and processes back to a working state. *Restoration* involves bringing a business facility and environment back to a workable state.
+
+  * Salvage team for restoration.
+
+### Training, Awareness, and Documentation
+
+When designing a training plan, consider including the following elements:
+
+* Orientation training for all new employees
+* Initial training for employees taking on a new disaster recovery role for the first time
+* Detailed refresher training for disaster recovery team members
+* Brief awareness refreshers for all other employees (can be accomplished as part of other meetings and through a medium like email newsletters sent to all employees)
+
+#### Testing and Maintenance
+
+The five main test types—checklist tests, structured walk-throughs, simulation tests, parallel tests, and full-interruption tests
+
+**Read Through Test** 
+
+You distribute copies of disaster recovery plans to the members of the disaster recovery team for review. This lets you accomplish three goals simultaneously:
+
+* Key personnel are aware of their responsibilities and have that knowledge refreshed periodically.
+* It provides individuals with an opportunity to review the plans for obsolete information and update any items that require modification because of changes within the organization.
+* In large organizations, it helps identify situations in which key personnel have left the company and nobody bothered to reassign their disaster recovery responsibilities. This is also a good reason why disaster recovery responsibilities should be included in job descriptions.
+
+**Structured Walk-Through(table-top exercise)**
+
+* Role-play a disaster scenario
+* Test moderator, who presents the details to the team at the meeting. 
+* The team members then refer to their copies of the disaster recovery plan and discuss the appropriate responses to that particular type of disaster.
+
+**Simulation Test**
+
+* Same as structured walk-through.
+* some of these response measures are then tested. This may involve the interruption of noncritical business activities and the use of some operational personnel.
+
+**Parallel Test**
+
+* Relocating personnel to the alternate recovery site and implementing site activation procedure
+* The only difference is that operations at the main facility are not interrupted.
+
+**Full-interruption tests**
+
+* Full-interruption tests operate like parallel tests, but they involve actually shutting down operations at the primary site and shifting them to the recovery site. 
+
+**Maintenance** 
+
+* Disaster recovery plan is a living document
+* As your organization’s needs change, you must adapt the disaster recovery plan to meet those changed needs to follow suit. 
+
+
+
+
