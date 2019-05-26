@@ -78,4 +78,54 @@ Access controls are also categorized by how they are implemented:
 
   * **Accountability** Users and other subjects can be held accountable for their actions when auditing is implemented. Auditing tracks subjects and records when they access objects, creating an audit trail in one or more audit logs. For example, auditing can record when a user reads, modifies, or deletes a file. Auditing provides accountability. Additionally, assuming the user has been properly authenticated, audit logs provide *nonrepudiation*. The user cannot believably deny taking an action recorded in the audit logs.
 
+### Authentication Factor
 
+Three basic methods of authentication are also known as types or factors. They are as follows:
+
+* **Type 1** A Type 1 authentication factor is *something you know*. Examples include a password, personal identification number (PIN), or passphrase.
+
+* **Type 2** A Type 2 authentication factor is *something you have*. Physical devices that a user possesses can help them provide authentication. Examples include a smartcard, hardware token, memory card, or Universal Serial Bus (USB) drive.
+
+* **Type 3** A Type 3 authentication factor is *something you are or something you do*. It is a physical characteristic of a person identified with different types of biometrics. Examples in the something-you-are category include fingerprints, voice prints, retina patterns, iris patterns, face shapes, palm topology, and hand geometry. Examples in the something-you-do category include signature and keystroke dynamics, also known as behavioral biometrics.
+
+
+In addition to the three primary authentication factors, there are some others.
+
+**Somewhere You Are** subject’s location based on a specific computer, a geographic location identified by an Internet Protocol (IP) address, or a phone number identified by caller ID.
+
+**Context-Aware Authentication** Many mobile device management (MDM) systems use context-aware authentication to identify mobile device users. It can identify multiple elements such as the location of the user, the time of day, and the mobile device. If the user meets all the requirements (location, time, and type of device in this example), it allows the user to log on using the other methods such as with a username and password.
+
+### Passwords
+
+A *static password* stays the same for a length of time such as 30 days, but static passwords are the weakest form of authentication. Passwords are weak security mechanisms for several reasons:
+
+* Users often choose passwords that are easy to remember and therefore easy to guess or crack.
+* Randomly generated passwords are hard to remember; thus, many users write them down.
+* Users often share their passwords, or forget them.
+* Attackers detect passwords through many means, including observation, sniffing networks, and stealing security databases.
+* Passwords are sometimes transmitted in clear text or with easily broken encryption protocols. Attackers can capture these passwords with network sniffers.
+* Password databases are sometimes stored in publicly accessible online locations.
+* Brute-force attacks can quickly discover weak passwords.
+
+
+> **PASSWORD STORAGE** Most OS use HASH (SHA-3) to store the password instead of storing it in plaintext. Many systems use more sophisticated hashing functions such as Password-Based Key Derivation Function 2 (PBKDF2) or bcrypt to add bits to the password before hashing it. These additional bits are referred to as a salt, and salting helps thwart rainbow table attacks.
+
+#### Creating Strong Passwords
+
+Organizations often include a written password policy in the overall security policy. IT security professionals then enforce the policy with technical controls such as a technical *password policy* that enforces the *password restriction* requirements. The following list includes some common password policy settings:
+
+* **Maximum Age** change their password periodically, such as every 45 days.
+* **Password Complexity** An eight-character password using uppercase characters, lowercase characters, symbols, and numbers. National Institute of Standards and Technology (NIST) special publication (SP) **800-63B**, “Digital Identity Guidelines,” states that authentication systems should support the use of any printable American Standard Code for Information Interchange (ASCII) characters and the space character.
+* **Password Length** NIST SP **800-63B** states that passwords should be at least eight characters long, and systems should support passwords as long as 64 characters. Many organizations require privileged account passwords to be longer, such as at least 15 characters long.
+
+> NIST SP 800-63B says that passwords should be at least eight characters long and support the use of any printable ASCII characters, and systems should support passwords of at least 64 characters long. It also recommends hashing the password using random salts of at least 32 bits in length and storing the salted hash of the password plus use additional authentication factor, such as a smart card 
+
+* **Password History** A password history remembers a certain number of previous passwords and prevents users from reusing a password in the history. Minimum password age is often set to one day.
+
+The following suggestions can help them create strong passwords:
+
+* *Do not* use any part of your name, logon name, email address, employee number, national identification number or social security number, phone number, extension, or any other identifying name or code.
+* *Do not* use information available from social network profiles such as a family member’s name, a pet’s name, or your birth date.
+* *Do not* use dictionary words (including words in foreign dictionaries), slang, or industry acronyms.
+* *Do use* nonstandard capitalization and spelling, such as stRongsecuRitee instead of strongsecurity.
+* *Do replace* letters with special characters and numbers, such as stR0ng$ecuR1tee instead of strongsecurity.
