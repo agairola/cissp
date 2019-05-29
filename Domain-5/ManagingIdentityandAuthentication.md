@@ -251,10 +251,143 @@ Examples:
 * 802.1x is another method used for device authentication - router, switches, wireless APs. 
 * All controls can work together 802.1x + MDM + NAC
 
-#### Service Authentication
+### Service Authentication
 
 * A service account is simply a user account that is created for a service instead of a person.
 * It’s common to set the properties of the account so that the password never expires.
 * strong, complex password that is changed more often than regular users
 * Account to be non-interactive, so traditional users cannot login
 * Services can be configured to use certificate-based authentication.
+
+## Implementing Identity Management
+
+Two categories: centralized and decentralized/distributed.
+
+* *Centralized* access control implies that all authorization verification is performed by a single entity within a system.
+
+* *Decentralized* access control (also known as distributed access control) implies that various entities located throughout a system perform authorization verification.
+
+### Single Sign-On
+
+Single sign-on (SSO) is a *centralized* access control technique that allows a subject to be authenticated once on a system and to access multiple resources without authenticating again
+
+The primary disadvantage to SSO is that once an account is compromised, an attacker gains unrestricted access to all of the authorized resources.
+
+However, most SSO systems include methods to protect user credentials. The following sections discuss several common SSO mechanisms.
+
+
+#### LDAP and Centralized Access Control
+
+  * `directory service` `Lightweight Directory Access Protocol (LDAP)` `Microsoft Active Directory Domain Services is LDAP-based`
+
+  * You can think of an LDAP directory as a telephone directory for network services and assets. Users, clients, and processes can search the directory service to find where a desired system or resource resides after completing authentication. 
+
+  * Multiple domains and *trusts* are commonly used in access control systems.
+
+#### LDAP and PKIs
+
+  * `LDAPs`
+
+#### Kerberos
+
+  * Current version - Kerberos 5
+  * *Kerberos Authentication Server*  The authentication server hosts the functions of the KDC: a ticket-granting service (TGS) and an authentication service (AS). However, it is possible to host the ticket-granting service on another server. The authentication service verifies or rejects the authenticity and timeliness of tickets. This server is often called the *Key Distribution Center (KDC)*.
+
+  ![alt text](kerborosewhiteboard.jpg)
+
+  13min Videos explaining Kerberos  - [link](https://www.cybrary.it/s3ss10n/kerberos-in-depth/)
+
+#### Federated Identity Management and SSO
+
+  * Many cloud-based applications use federated identity management (FIM), which is a form of SSO.
+
+  * FIM extends this beyond a single organization. Multiple organizations can join a federation, or group, where they agree on a method to share identities between them.
+
+  * Some markup languages:
+
+     * Hypertext Markup Language (HTML) `how data is displayed using tags to manipulate the size and color of the text`
+     * Extensible Markup Language (XML) `XML can include tags to describe data as anything desired`
+
+  * Some common languages used for federated identities are listed here:
+
+     * *Security Assertion Markup Language (SAML)* is an XML-based language that is commonly used to exchange authentication and authorization (AA) information between federated organizations. It is often used to provide SSO capabilities for browser access.
+
+     * *Service Provisioning Markup Language (SPML)* is a newer framework developed by OASIS, it is based on XML and is specifically designed for exchanging user information for federated identity SSO purposes. It is based on the Directory Service Markup Language (DSML), which can display LDAP-based directory service information in an XML format.
+
+     * *Extensible Access Control Markup Language (XACML)* is a standard developed by OASIS and is used to define access control policies within an XML format.
+  
+  * **OAuth 2.0** OAuth (implying open authentication) is an open standard used for access delegation. Example, authorization an app to use your twitter credentials. [RFC 6749](https://tools.ietf.org/html/rfc6749) documents OAuth 2.0. 
+
+  * **OpenID** OpenID is also an open standard.  It provides decentralized authentication, allowing users to log into multiple unrelated websites with one set of credentials maintained by a third-party service referred to as an OpenID provider. When users go to an OpenID-enabled website (also known as a Relying Party), they are prompted to provide their OpenID identity as a uniform resource locator (URL). The two sites exchange data and create a secure channel. The user is then redirected to the OpenID provider and is prompted to provide the password. If correct, the user is redirected to the OpenID-enabled site.
+
+  * **OpenID** Connect OpenID Connect is an authentication layer using the OAuth 2.0 framework. It builds on the technologies created with OpenID but uses a JavaScript Object Notation (JSON) Web Token (JWT), also called an ID token. OpenID Connect uses a Representational State Transfer (REST)–compliant web service to retrieve the JWT. In addition to providing authentication, the JWT can also include provide profile information about the user.
+
+  * **Scripted Access** Scripted access or logon scripts establish communication links by providing an automated process to transmit logon credentials at the start of a logon session.
+
+  ![alt text](OpenIDConnectgraphics.jpg)
+
+### Credential Management System 
+
+  * A credential management system provides a storage space for users to keep their credentials when SSO isn’t available.
+
+  * Example, Windows systems include the Credential Manager tool. Another third-party example is KeePass. 
+
+### Integrating Identity Services
+
+  * Identity services provide additional tools for identification and authentication. Some of the tools are designed specifically for cloud-based applications whereas others are third-party identity services designed for use within the organization (on-premises).
+
+  * Identity as a service, or identity and access as a service (IDaaS), Google, office365 are good example. Centrify provides third-party IDaaS services that integrate with Microsoft Active Directory. Once configured, users log onto the domain and can then access Office 365 cloud resources without logging on again.
+
+### Managing Sessions
+
+  * When using any type of authentication system, it’s important to manage sessions to prevent unauthorized access. This includes sessions on regular computers such as desktop PCs and within online sessions with an application.
+
+  *  For example, if you establish a secure session with your bank but don’t interact with the session for 10 minutes, the application will typically log you off. In some cases, the application gives you a notification saying it will log you off soon. 
+
+### AAA Protocols
+
+  * Several protocols provide authentication, authorization, and accounting and are referred to as AAA protocols. These provide centralized access control with remote access systems such as virtual private networks (VPNs) and other types of network access servers.
+
+  * **Radius** Remote Authentication Dial-in User Service (RADIUS) centralizes authentication for remote connections. RADIUS uses the User Datagram Protocol (UDP) and encrypts only the exchange of the password. It doesn’t encrypt the entire session, but additional protocols can be used to encrypt the data session. The current version is defined in RFC 2865.
+
+  * **TACACS+** Terminal Access Controller Access-Control System (TACACS) was introduced as an alternative to RADIUS. TACACS+ provides several improvements over the earlier versions and over RADIUS. It separates authentication, authorization, and accounting into separate processes, which can be hosted on three separate servers if desired. TACACS and XTACACS use UDP port 49, while TACACS+ uses Transmission Control Protocol (TCP) port 49.
+
+  * **Diameter** Building on the success of RADIUS and TACACS+, an enhanced version of RADIUS named Diameter was developed. It supports a wide range of protocols, including traditional IP, Mobile IP, and Voice over IP (VoIP). popular in situations where roaming support is desirable, such as with wireless devices and smartphones. While Diameter is an upgrade to RADIUS, it is not backward compatible to RADIUS. Diameter uses TCP port 3868 or Stream Control Transmission Protocol (SCTP) port 3868, providing better reliability than UDP used by RADIUS. It also supports Internet Protocol security (IPsec) and Transport Layer Security (TLS) for encryption.
+
+## Managing the Identity and Access Provisioning Lifecycle
+
+The identity and access provisioning lifecycle refers to the creation, management, and deletion of accounts. Although these activities may seem mundane, they are essential to a system’s access control capabilities. Access control administration is the collection of tasks and duties involved in managing accounts, access, and accountability during the life of the account. These tasks are contained within three main responsibilities of the identity and access provisioning lifecycle: provisioning, account review, and account revocation.
+
+### Provisioning 
+
+  * The initial creation of a new user account is often called an enrollment or registration. It is also critical that the identity of the individual being enrolled be proved through whatever means your organization deems necessary and sufficient. Photo ID, birth certificate, background check, credit check, security clearance verification, FBI database search, and even calling references are all valid forms of verifying a person’s identity before enrolling them in any secured system.
+
+  * Automation can be used for provisioning - Automated provisioning systems create accounts consistently, such as always creating usernames the same way and treating duplicate usernames consistently.
+
+  * If roles are used then attach roles to the user.
+
+  * As part of the hiring process, new employees should be trained on organization security policies and procedures
+
+### Account Review
+
+  * Accounts should be reviewed periodically to ensure that security policies are being enforced. This includes ensuring that inactive accounts are disabled and employees do not have excessive privileges.
+
+  * Many administrators use scripts to check for inactive accounts periodically. 
+
+  * It’s important to guard against two problems related to access control: excessive privilege and creeping privileges. `basic security principle of least privilege`
+
+  * *Excessive privilege* occurs when users have more privileges than their assigned work tasks dictate. 
+
+  * *Creeping privileges* (sometimes called privilege creep) involve a user account accumulating privileges over time as job roles and assigned tasks change.
+
+### Account Revocation 
+
+  * When employees leave an organization for any reason, it is important to disable their user accounts as soon as possible.
+
+  * If a terminated employee retains access to a user account after the exit interview, the risk for sabotage is very high
+
+  * It’s possible the account will be needed, such as to access encrypted data, so it should not be deleted right away.
+
+  * Many systems have the ability to set specific expiration dates for any account. . These are useful for temporary or short-term employees and automatically disable the account on the expiration date, such as after 30 days for a temporary employee hired on a 30-day contract. 
+
+  
