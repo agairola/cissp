@@ -330,4 +330,319 @@ For example, a cryptographic algorithm that first performs a complex substitutio
 
 ## Modern Cryptography
 
+### Cryptographic Keys
+
+Early Principle - “security through obscurity.” 
+
+Modern cryptosystems Principle - the algorithms for most cryptographic systems are widely available for public review in the accompanying literature and on the internet. Opening algorithms to public scrutiny actually improves their security. 
+
+Modern cryptosystems rely on the secrecy of one or more cryptographic keys used to personalize the algorithm for specific users or groups of users. 
+
+The `length of the key` is still an extremely important factor in determining the strength of the cryptosystem and the likelihood that the encryption will not be compromised through cryptanalytic techniques.
+
+It’s essential that you outpace adversaries by using sufficiently long keys that will defeat contemporary cryptanalysis efforts and outpace the projected increase in cryptanalytic capability during the entire time period the data must be kept safe. Example, use of quantum computing will help break cryptosystems.
+
+### Symmetric Key Algorithms 
+
+Symmetric key algorithms rely on a `shared secret` encryption key that is distributed to all members who participate in the communications. It performs `bulk encryption` and provides only for the security service of `confidentiality`. Symmetric key cryptography can also be called secret key cryptography and private key cryptography.
+
+![alt text](SymmetricKeyAlgorithms.jpg)
+
+Symmetric key cryptography has several weaknesses:
+
+**Key distribution is a major problem** - If a secure electronic channel is not available, an offline key distribution method must often be used (that is, out-of-band exchange).
+
+**Symmetric key cryptography does not implement nonrepudiation** - Because any communicating party can encrypt and decrypt messages with the shared secret key, there is no way to prove where a given message originated.
+
+**The algorithm is not scalable** - It is extremely difficult for large groups to communicate using symmetric key cryptography. 
+
+**Keys must be regenerated often** - Each time a participant leaves the group, all keys known by that participant must be discarded.
+
+Strengths:
+
+* Great speed at which it can operate (often 1,000 to 10,000 times faster than asymmetric algorithms)
+* Symmetric key cryptography also naturally lends itself to `hardware implementations`
+
+### Asymmetric key algorithms
+
+Also known as - public key algorithms. 
+
+In these systems, each user has two keys: a public key, which is shared with all users, and a private key, which is kept secret and known only to the user. But here’s a twist: opposite and related keys must be used in tandem to encrypt and decrypt.
+
+![alt text](Asymmetrickeyalgorithms.jpg)
+
+Number of keys required comparison:
+
+Number of participants | Number of symmetric keys required | Number of asymmetric keys required
+--- | --- | ---
+2 | 1 | 4
+3 | 3 | 6
+4 | 6 | 8
+5 | 10 | 10
+10 | 45 | 20
+100 | 4,950 | 200
+1,000 | 499,500 | 2,000
+10,000 | 49,995,000 | 20,000
+
+Formula of Symmetric Key Algo:
+
+![alt text](SymmetricKeyAlgorithms1.jpg)
+
+Strengths of asymmetric key cryptography:
+
+* **The addition of new users requires the generation of only one public-private key pair**
+* **Users can be removed far more easily from asymmetric system**
+* **Key regeneration is required only when a user’s private key is compromised**
+* **Key distribution is a simple process**
+* **No preexisting communication link needs to exist**
+
+Weakness:
+ 
+Slow speed of operation, many applications that require the secure transmission of large amounts of data use public key cryptography to establish a connection and then exchange a symmetric secret key. 
+
+Comparison of symmetric and asymmetric cryptography systems:
+
+Symmetric |	Asymmetric
+--- | --- 
+Single shared key | Key pair sets
+Out-of-band exchange | In-band exchange
+Not scalable | Scalable
+Fast | Slow
+Bulk encryption | Small blocks of data, digital signatures, digital envelopes, digital certificates
+Confidentiality | Confidentiality, integrity, authenticity, nonrepudiation
+
+### Hashing Algorithms
+
+Message digests are summaries of a message’s content (not unlike a file checksum) produced by a hashing algorithm.  Cases where a hash function produces the same value for two different methods are known as *collisions*, and the existence of collisions typically leads to the deprecation of a hashing algorithm.
+
+## Symmetric Cryptography
+
+### Data Encryption Standard 
+
+Five modes of operation:
+
+* Electronic Code Book (ECB) mode
+* Cipher Block Chaining (CBC) mode
+* Cipher Feedback (CFB) mode
+* Output feedback (OFB) mode
+* Counter (CTR) mode
+
+**Algo Details** 
+
+* DES modes operate on `64 bits` of `plaintext` at a time to generate `64-bit` `blocks` of ciphertext. The `key` used by DES is `56 bits` long.
+
+* DES uses a long series of `exclusive OR (XOR)` operations to generate the ciphertext. This process is `repeated 16 times` for each encryption/decryption operation. Each repetition is commonly referred to as a round of encryption, explaining the statement that DES performs 16 rounds of encryption.
+
+>  The DES specification calls for a 64-bit key. However, of those 64 bits, only 56 actually contain keying information. The remaining 8 bits are supposed to contain parity information to ensure that the other 56 bits are accurate. 
+
+**Electronic Code Book (ECB)Mode** 
+
+![alt text](ElectronicCodeBookMode.png)
+
+It simply encrypts the block using the chosen secret key.
+
+How to break: If an enemy were eavesdropping on the communications, they could simply build a “code book” of all the possible encrypted values.
+
+Usage: ECB is used only for exchanging small amounts of data, such as keys and parameters used to initiate other DES modes as well as the cells in a database.
+
+**Cipher Block Chaining (CBC) Mode**
+
+Each block of unencrypted text is XORed with the block of ciphertext immediately preceding it before it is encrypted using the DES algorithm. The decryption process simply decrypts the ciphertext and reverses the XOR operation. CBC implements an IV and XORs it with the first block of the message, producing a unique output every time the operation is performed. The IV must be sent to the recipient, perhaps by tacking the IV onto the front of the completed ciphertext in plain form or by protecting it with ECB mode encryption using the same key used for the message. 
+
+![alt text](CipherBlockChainingMode-1.png)
+![alt text](CipherBlockChainingMode-2.png)
+
+**Cipher Feedback (CFB) Mode**
+
+Cipher Feedback (CFB) mode is the streaming cipher version of CBC. Instead of breaking a message into blocks, it uses memory buffers of the same block size. As the buffer becomes full, it is encrypted and then sent to the recipients. CFB operates in the same fashion as CBC. It uses an IV, and it uses chaining.
+
+![alt text](CipherFeedbackMode-1.png)
+![alt text](CipherFeedbackMode-2.png)
+
+**Output Feedback (OFB) Mode**
+
+DES XORs the plaintext with a seed value. For the first encrypted block, an initialization vector is used to create the seed value. Future seed values are derived by running the DES algorithm on the previous seed value. The major advantages of OFB mode are that there is no chaining function and transmission errors do not propagate to affect the decryption of future blocks.
+
+![alt text](OutputFeedbackMode-1.png)
+![alt text](OutputFeedbackMode-2.png)
+
+**Counter (CTR) Mode** 
+
+Stream cipher similar to that used in CFB and OFB modes. For seed value it uses a simple counter that increments for each operation. As with OFB mode, errors do not propagate in CTR mode.
+
+> CTR mode allows you to break an encryption or decryption operation into multiple independent steps. This makes CTR mode well suited for use in parallel computing.
+
+![alt text](CounterMode-1.png)
+![alt text](CounterMode-2.png)
+
+### Triple DES (3DES)
+
+There are four versions of 3DES:
+
+**DES-EEE3**
+
+The first simply encrypts the plaintext three times, using three different keys: K1, K2, and K3. It is known as DES-EEE3 mode (the Es indicate that there are three encryption operations, whereas the numeral 3 indicates that three different keys are used)
+
+```
+E(K1,E(K2,E(K3,P)))
+```
+
+DES-EEE3 has an effective key length of `168 bits` (56x3).
+
+**DES-EDE3**
+
+It also uses three keys but replaces the second encryption operation with a decryption operation.
+
+```
+E(K1,D(K2,E(K3,P)))
+```
+
+**DES-EEE2**
+
+It uses only two keys, K1 and K2:
+
+```
+E(K1,E(K2,E(K1,P)))
+```
+
+Effective key length `112 bits` (56x2). 
+
+**DES-EDE2**
+
+It also uses two keys but uses a decryption operation in the middle.
+
+```
+E(K1,D(K2,E(K1,P)))
+```
+
+Effective key length `112 bits` (56x2)
+
+### International Data Encryption Algorithm (IDEA)
+
+  * `Block cipher` was developed in response to complaints about the insufficient key length of the DES algorithm. 
+  * IDEA operates on `64-bit blocks` of plaintext/ciphertext. However, it begins its operation with a `128-bit key`. This key is broken up in a series of operations into `52` `16-bit subkeys`.
+  * The subkeys then act on the input text using a combination of `XOR and modulus operations` to produce the encrypted/decrypted version of the input message. 
+
+  ![alt text](560px-International_Data_Encryption_Algorithm_InfoBox_Diagram.svg.png)
+
+One popular implementation of IDEA is found in Phil Zimmerman’s popular Pretty Good Privacy (PGP) secure email package
+
+### Blowfish
+
+  * Block cipher
+  * Operates on 64-bit blocks of text
+  * Variable-length keys ranging from a relatively insecure `32 bits` to an extremely strong `448 bits`
+  * Time trials have established Blowfish as a much faster algorithm than both IDEA and DES
+
+### Skipjack
+
+  * Was approved for use by the U.S. government in Federal Information Processing Standard (FIPS) 185, the Escrowed Encryption Standard (EES)
+  * 64-bit blocks of text
+  * 80-bit key
+  * Same four modes of operation supported by DES
+  * Skipjack has an added twist—it supports the escrow of encryption keys. Two government agencies, the National Institute of Standards and Technology (NIST) and the Department of the Treasury, hold a portion of the information required to reconstruct a Skipjack key.
+  * Skipjack and the Clipper chip were not embraced by the cryptographic community at large because of its mistrust of the escrow procedures in place within the U.S. government.
+
+### Rivest Cipher 5 (RC5)
+
+RC5 is a block cipher of variable block sizes (32, 64, or 128 bits) that uses key sizes between 0 (zero) length and 2,040 bits. RC5 is an improvement on an older algorithm called RC2 that is no longer considered secure. RC5 is the subject of brute-force cracking attempts. 
+
+### Advanced Encryption Standard
+
+  * National Institute of Standards and Technology announced that the Rijndael (pronounced “rhine-doll”) block cipher had been chosen as the replacement for DES. In November 2001, NIST released FIPS 197.
+  * Three key strengths: 128 bits, 192 bits, and 256 bits
+  * AES only allows the processing of 128-bit blocks, but Rijndael exceeded this specification, allowing cryptographers to use a block size equal to the key length. The number of encryption rounds depends on the key length chosen:
+
+    * 128-bit keys require 10 rounds of encryption.
+    * 192-bit keys require 12 rounds of encryption.
+    * 256-bit keys require 14 rounds of encryption.
+
+### Twofish
+
+  * Twofish is a block cipher.
+  * Operates on 128-bit blocks of data
+  * Key size upto 256 bits in length
+  * Twofish uses two techniques not found in other algorithms:
+
+     * *Prewhitening* involves XORing the plaintext with a separate subkey before the first round of encryption.
+     * *Postwhitening* uses a similar operation after the 16th round of encryption.
+
+> Important
+
+Symmetric memorization chart
+
+Name |	Block size | Key size
+--- | --- | --- 
+Advanced Encryption Standard (AES)	| 128 |	128, 192, 256
+Rijndael |	Variable | 128, 192, 256
+Blowfish (often used in SSH) | 64 | 32–448
+Data Encryption Standard (DES) | 64 | 56
+IDEA (used in PGP) |64 | 128
+Rivest Cipher 2 (RC2) | 64 | 128
+Rivest Cipher 5 (RC5) | 32, 64, 128 | 0–2,040
+Skipjack | 64 | 80
+Triple DES (3DES) | 64 | 112 or 168
+Twofish | 128 | 1–256
+
+### Symmetric Key Management
+
+Key management practices - includes safeguards surrounding the creation, distribution, storage, destruction, recovery, and escrow of secret keys.
+
+#### Creation and Distribution of Symmetric Keys
+
+The three main methods used to exchange secret keys securely are offline distribution, public key encryption, and the Diffie–Hellman key exchange algorithm.
+
+**Offline Distribution**
+**Public Key Encryption** 
+
+Many people use public key encryption to set up an initial communications link. Once the link is successfully established and the parties are satisfied as to each other’s identity, they exchange a secret key over the secure public key link. 
+
+**Diffie-Hellma** 
+
+The algorithm works as follows:
+
+1) The communicating parties (we’ll call them Richard and Sue) agree on two large numbers: `p` (which is a prime number) and `g` (which is an integer) such that `1 < g < p`.
+2) Richard chooses a random large integer `r` and performs the following calculation:
+`R = gr mod p`
+3) Sue chooses a random large integer `s` and performs the following calculation:
+`S = gs mod p`
+4) Richard sends R to Sue and Sue sends S to Richard.
+5) Richard then performs the following calculation:
+`K = Sr mod p`
+6) Sue then performs the following calculation:
+`K = Rs mod p`
+
+At this point, Richard and Sue both have the same value, K, and can use this for secret key communication between the two parties.
+
+#### Storage and Destruction of Symmetric Keys
+
+This includes following best practices surrounding the storage of encryption keys:
+
+* Never store an encryption key on the same system where encrypted data resides
+* Consider providing two different individuals with half of the key. They then must collaborate to re-create the entire key. This is known as the principle of *split knowledge* .
+* A user with knowledge of a secret key leaves the organization the keys must be changed, and all encrypted materials must be reencrypted with the new keys.
+
+#### Key Escrow and Recovery
+
+* Governments around the world have floated ideas to implement key escrow systems. These systems allow the government, under limited circumstances such as a court order, to obtain the cryptographic key used for a particular communication from a central storage facility.
+
+There are two major approaches to key escrow that have been proposed over the past decade.
+
+**Fair Cryptosystems** Divide secret keys used in a communication into two or more pieces, each of which is given to an independent third party. When the government obtains legal authority to access a particular key, it provides evidence of the court order to each of the third parties and then reassembles the secret key.
+
+**Escrowed Encryption Standard** Provides the government with a technological means to decrypt ciphertext. This standard is the basis behind the Skipjack algorithm discussed earlier in this chapter.
+
+## Cryptographic Lifecycle
+
+With the exception of the one-time pad, all cryptographic systems have a limited life span. 
+
+Moore’s law:
+
+Processing capabilities of a state-of-the-art microprocessor will double approximately every two years.
+
+Security professionals must keep this cryptographic lifecycle in mind. Security professionals can use the following algorithm and protocol governance controls:
+
+* Specifying the cryptographic algorithms (such as AES, 3DES, and RSA) acceptable for use in an organization
+* Identifying the acceptable key lengths for use with each algorithm based on the sensitivity of information transmitted
+* Enumerating the secure transaction protocols (such as SSL and TLS) that may be used
 
