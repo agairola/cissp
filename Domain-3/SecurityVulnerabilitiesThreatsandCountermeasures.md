@@ -471,7 +471,9 @@ A *type II hypervisor* is a hosted hypervisor. A standard regular OS is present 
 Some of the concepts in cloud computing are listed here:
 
 **Platform as a service** is the concept of providing a computing platform and software solution stack as a virtual or cloud-based service. Example AWS RDS
+
 **Software as a service** SaaS provides on-demand online access to specific software applications or suites without the need for local installation. Example,  Microsoft Office 365, Google Docs
+
 **Infrastructure as a service** This include utility or metered computing services, administrative task automation, dynamic scaling, virtualization services, policy implementation and management services, and managed/filtered internet connectivity. Example EC2  
 
 ![alt text](cloudservices.png)
@@ -485,8 +487,11 @@ A *cloud solution* is a deployment concept where an organization contracts with 
 Cloud services can also be offered in a variety of deployment options, including the following:
 
 **Private** A private cloud is a cloud service within a corporate network and isolated from the internet
+
 **Public**  A public cloud is a cloud service that is accessible to the general public, typically over an internet connection.
+
 **Hybrid** A hybrid cloud is a mixture of private and public cloud components. . For example, an organization could host a private cloud for exclusive internal use but distribute some resources onto a public cloud for the public, business partners, customers, the external sales force, and so on.
+
 **Community** A community cloud is a cloud environment maintained, used, and paid for by a group of users or organizations for their shared benefit, such as collaboration and data exchange.
 
 Cloud Security concerns :

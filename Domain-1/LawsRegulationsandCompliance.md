@@ -38,7 +38,27 @@
 
 #### Computer Fraud and Abuse Act
 
+The Computer Fraud and Abuse Act (CFAA) was the first major piece of cybercrime-specific legislation in the United States. Congress had earlier enacted computer crime law as part of the `Comprehensive Crime Control Act (CCCA)` of 1984, but CFAA was carefully written to exclusively cover computer crimes that crossed state boundaries to avoid infringing on states’ rights and treading on thin constitutional ice. 
+
 #### CFAA Amendments
+
+In 1994, Congress recognized that the face of computer security had drastically changed since the CFAA was last amended in 1986 and made a number of sweeping changes to the act.
+
+Example: 
+
+Modified the CFAA to cover any computer used in interstate commerce rather than just “federal interest” computer systems
+
+Since the initial CFAA amendments in 1994, Congress passed additional amendments in 1996, 2001, 2002, and 2008 as part of other cybercrime legislation
+
+#### Federal Sentencing Guidelines
+
+The Federal Sentencing Guidelines released in 1991 provided punishment guidelines to help federal judges interpret computer crime laws. Three Major Provision:
+
+* The guidelines formalized the *prudent man rule*, which requires senior executives to take personal responsibility for ensuring the due care that ordinary, prudent individuals would exercise in the same situation.
+
+* minimize punishment for infractions (a violation or infringement of a law or agreement.) by demonstrating that they used `due diligence` in the conduct of their information security duties.
+
+* burdens of proof for negligence.
 
 #### National Information Infrastructure Protection Act of 1996
 

@@ -65,7 +65,7 @@ Preparing for equipment failure can take many forms. In some non-mission-critica
 
 In some cases, maintaining onsite replacements is not feasible. For those cases, establishing a service-level agreement (SLA) with the hardware vendor is essential. An SLA clearly defines the response time a vendor will provide in the event of an equipment failure emergency.
 
-Aging hardware should be scheduled for replacement and/or repair.  MTTF (*mean time to failure*) is the expected typical functional lifetime of the device given a specific operating environment. MTTR (*mean time to repair*) is the average length of time required to perform a repair on the device.  An additional measurement is that of the mean time between failures (MTBF). This is an estimation of the time between the first and any subsequent failures. An additional measurement is that of the *mean time between failures (MTBF)*. This is an estimation of the time between the first and any subsequent failures. 
+Aging hardware should be scheduled for replacement and/or repair.  MTTF (*mean time to failure*) is the expected typical functional lifetime of the device given a specific operating environment. MTTR (*mean time to repair*) is the average length of time required to perform a repair on the device. An additional measurement is that of the *mean time between failures (MTBF)*. This is an estimation of the time between the first and any subsequent failures. 
 
 ### WIRING CLOSETS
 
