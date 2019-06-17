@@ -141,8 +141,11 @@ The Take-Grant model employs a directed graph to dictate how rights can be passe
 * A subject with the `take right` can `take a right from another subject`
 
 Take rule - Allows a subject to take rights over an object
+
 Grant rule - Allows a subject to grant rights to an object
+
 Create rule - Allows a subject to create new rights
+
 Remove rule	- Allows a subject to remove rights it has
 
 ### ACCESS CONTROL MATRIX
