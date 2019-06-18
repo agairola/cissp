@@ -171,7 +171,9 @@ Examples: “cozy bear attacks” - [wiki](https://en.wikipedia.org/wiki/Cozy_Be
 Many organizations use one or more of the following three approaches to identify threats:
 
 **Focused on Assets** `identify threats to the valuable assets`
+
 **Focused on Attackers** `identify potential attackers and identify the threats they represent based on the attacker’s goals.` example, in government and APT knowledge they may have.
+
 **Focused on Software** `consider potential threats against the software while developing`
 
 ### Identifying vulnerabilities
