@@ -80,3 +80,12 @@ The Elliptic Curve DSA (ECDSA) as specified in ANSI X9.62
 ISO released the Common Criteria (ISO 15408)
 
 [Link](https://www.google.com/search?q=ISO+15408&rlz=1C5CHFA_enAU761AU761&oq=ISO+15408&aqs=chrome..69i57.238j0j7&sourceid=chrome&ie=UTF-8)
+
+------------------------------------------------------
+ISO 7498 defines the OSI Reference Model
+
+[Link of Part-1](https://www.iso.org/obp/ui/#iso:std:iso-iec:7498:-1:ed-1:v2:en)
+
+[Link of Part-2](https://www.iso.org/obp/ui/#iso:std:iso:7498:-2:ed-1:v1:en)
+
+------------------------------------------------------

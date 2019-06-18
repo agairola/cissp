@@ -439,7 +439,7 @@ Constant traffic | Bursty traffic
 Fixed known delays | Variable delays
 Connection oriented | Connectionless
 Sensitive to connection loss | Sensitive to data loss
-Used primarily for voice	Used for any type of traffic
+Used primarily for voice	| Used for any type of traffic
 
 Security: 
 
@@ -464,6 +464,7 @@ WAN links and long-distance connection technologies can be divided into two prim
 Examples of dedicated lines:
 
 Technology | Connection Type | Speed
+--- | --- | ---
 Digital Signal Level 0 (DS-0) | Partial T1 | 64 Kbps up to 1.544 Mbps
 Digital Signal Level 1 (DS-1) | T1 | 1.544 Mbps
 Digital Signal Level 3 (DS-3) | T3 | 44.736 Mbps

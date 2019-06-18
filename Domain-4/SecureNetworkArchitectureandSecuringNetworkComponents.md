@@ -315,9 +315,13 @@ Domain hijacking, or domain theft, is the malicious action of changing the regis
 Converged protocols are the merging of specialty or proprietary protocols with standard protocols, such as those from the TCP/IP suite. Example:
 
 **Fibre Channel over Ethernet (FCoE)** `requires 10 Gbps Ethernet`
+
 **MPLS (Multiprotocol Label Switching)** `directs data across a network based on short path labels rather than longer network addresses`
+
 **Internet Small Computer System Interface (iSCSI)** `networking storage standard based on IP`
+
 **Voice over IP (VoIP)** `transport voice and/or data over a TCP/IP network. VoIP has the potential to replace or supplant PSTN `
+
 **Software-Defined Networking (SDN)** `SDN aims at separating the infrastructure layer (i.e., hardware and hardware-based settings) from the control layer (i.e., network services of data transmission management).`
 
 #### Content Distribution Networks
