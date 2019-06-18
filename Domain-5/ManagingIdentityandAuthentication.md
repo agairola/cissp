@@ -233,6 +233,7 @@ Biometric characteristics are often defined as either *physiological or behavior
 Biometric devices are rated for performance by examining the different types of errors they produce.
 
 **False Rejection Rate or Type I error** A false rejection occurs when a valid subject is not authenticated
+
 **False Acceptance Rate or Type II error** A false acceptance occurs when an invalid subject is authenticated.
 
 Most biometric devices have a *sensitivity adjustment*. When a biometric device is too sensitive, false rejections (false negatives) are more common. When a biometric device is not sensitive enough, false acceptance (false positives) are more common.
