@@ -535,6 +535,7 @@ SDH and SONET both support mesh and ring topologies. These fiber solutions are o
 Some WAN connection technologies require additional specialized protocols to support various types of specialized systems or devices. Three of these protocols are SDLC, HDLC, and HSSI:
 
 **Synchronous Data Link Control (SDLC)**
+
 **High-Level Data Link Control (HDLC)** 
 
 ### Dial-UP Encapsulation Protocols 
