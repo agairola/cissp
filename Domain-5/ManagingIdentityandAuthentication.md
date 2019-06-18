@@ -209,14 +209,23 @@ Biometric factors can be used as an identifying (one-to-many search) or authenti
 Biometric characteristics are often defined as either *physiological or behavioral*. Physiological biometric methods include fingerprints, face scans etc. Behavioral biometric methods include signature dynamics and keystroke patterns (keystroke dynamics). These are sometimes referred to as something-you-do authentication.
 
 **Fingerprints** Fingerprints are the visible patterns on the fingers and thumbs of people.
+
 **Face Scans** Face scans use the geometric patterns of faces for detection and recognition.
+
 **Retina Scans** Retina scans focus on the pattern of blood vessels at the `back of the eye`. They are the `most accurate` form of biometric authentication and can differentiate between identical twins. However, some privacy proponents object to their use because they can reveal medical conditions, such as high blood pressure and pregnancy.
+
 **Iris Scans** Focusing on the `colored area around the pupil`, iris scans are the `second most accurate` form of biometric authentication. Like the retina, the iris remains relatively unchanged throughout a person’s life (barring eye damage or illness).
+
 **Palm Scans** Palm scanners scan the palm of the hand for identification. They use near-infrared light to measure vein patterns in the palm, which are as unique as fingerprints
+
 **Hand Geometry** Hand geometry recognizes the physical dimensions of the hand. This includes the width and length of the palm and fingers.
+
 **Heart/Pulse** Patterns Measuring the user’s pulse or heartbeat ensures that a real person is providing the biometric factor. It is often employed as a secondary biometric to support another type of authentication. a reliable method has not been created or fully tested.
+
 **Voice Pattern Recognition** This type of biometric authentication relies on the characteristics of a person’s speaking voice, known as a voiceprint.
+
 **Signature Dynamics** This recognizes how a subject writes a string of characters. Signature dynamics examine both how a subject performs the act of writing and features in a written sample.
+
 **Keystroke Patterns** Keystroke patterns (also known as keystroke dynamics) measure how a subject uses a keyboard by analyzing *flight time and dwell time*. *Flight time* is how long it takes between key presses, and *dwell time* is how long a key is pressed. 
 
 #### Biometric Factor Error Ratings
