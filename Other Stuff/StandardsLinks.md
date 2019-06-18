@@ -89,3 +89,11 @@ ISO 7498 defines the OSI Reference Model
 [Link of Part-2](https://www.iso.org/obp/ui/#iso:std:iso:7498:-2:ed-1:v1:en)
 
 ------------------------------------------------------
+NIST special publication (SP) 800-63B
+Provide details about password complexity, password length etc
+
+Digital Identity Guidelines - Authentication and Lifecycle Management
+
+[Link](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf)
+
+------------------------------------------------------

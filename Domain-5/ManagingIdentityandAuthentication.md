@@ -179,13 +179,26 @@ This process typically takes advantage of one of the following standards.
 > **Standard/Guideline** SP 800-63B recommends that code sent to users cell phone should not be visible to unlocked screen but most of the code always appear on the locked screen.
 
 ```
-As discussed in this section, a numeric code sent to a smartphone is a secure method. The reason is that the smartphone has a subscriber identify module (SIM) card that uniquely identifies the device. Devices with a SIM card receive messages over the public switched telephone network (PSTN).
+As discussed in this section, a numeric code sent to a smartphone is a
+secure method. The reason is that the smartphone has a subscriber 
+identify module (SIM) card that uniquely identifies the device. 
+Devices with a SIM card receive messages over the public switched 
+telephone network (PSTN).
 
-In contrast, if the message containing the numeric code is sent to an email address or a phone using Voice over Internet Protocol (VoIP), it isn’t possible to uniquely identify the device receiving the message. SP 800.63B recommends against using a device if it isn’t possible to prove possession of the device, such as when it sent as an email or using VoIP.
+In contrast, if the message containing the numeric code is sent to
+an email address or a phone using Voice over Internet Protocol (VoIP)
+, it isn’t possible to uniquely identify the device receiving the message.
+ SP 800.63B recommends against using a device if it isn’t possible to 
+ prove possession of the device, such as when it sent as an email or using VoIP.
 
-SP 800.63B has noted some risks with sending codes using the Short Message Service (SMS). SMS messages can sometimes be intercepted, and they can also be sent to VoIP devices.
+SP 800.63B has noted some risks with sending codes using the Short Message 
+Service (SMS). SMS messages can sometimes be intercepted, and they can 
+also be sent to VoIP devices.
 
-As a better alternative, SP 800.63B recommends the use of push notifications. A push notification first establishes an authenticated protected channel. Once the channel is established, it sends the notification to the receiving device.
+As a better alternative, SP 800.63B recommends the use of push 
+notifications. A push notification first establishes an authenticated 
+protected channel. Once the channel is established, it sends the notification 
+to the receiving device.
 ```
 
 ### Biometrics 
