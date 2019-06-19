@@ -112,4 +112,49 @@ OWASP Testing Guide, Open Source Security Testing Methodology Manual (OSSTMM), N
 [NIST 800-115](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf)
 [FedRAMP Penetration Test Guidance](https://www.fedramp.gov/assets/resources/documents/CSP_Penetration_Test_Guidance.pdf)
 [PCI DSS](https://www.pcisecuritystandards.org/pci_security/)
+
 ------------------------------------------------------
+NIST Special Publication 800-47
+Security Guide for Interconnecting Information Technology Systems,” includes detailed information on MOUs and ISAs.
+
+[Link](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-47.pdf)
+
+------------------------------------------------------
+NIST Special Publication 800-145
+
+The NIST Definition of Cloud Computing, provides standard definitions for many cloud-based services. This includes definitions for service models (SaaS, PaaS, and IaaS), and definitions for deployment models (public, private, community, and hybrid).
+
+[Link](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf)
+
+------------------------------------------------------
+NIST Special Publication 800-144
+
+Guidelines on Security and Privacy in Public Cloud Computing, provides in-depth details on security issues related to cloud-based computing.
+
+[Link])(https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-144.pdf)
+
+------------------------------------------------------
+NIST Special Publication 800-61
+
+Computer Security Incident Handling Guide” defines a computer security incident as “a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices.”
+
+[Link](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
+
+------------------------------------------------------
+NIST Special Publication 800-94
+
+Guide to Intrusion Detection and Prevention Systems
+
+[Link](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-94.pdf)
+
+------------------------------------------------------
+FIPS PUB 200 
+
+Minimum Security Requirements for Federal Information and Information Systems, minimum security requirements for audit data. 
+
+[Link](https://csrc.nist.gov/csrc/media/publications/fips/200/final/documents/fips-200-final-march.pdf)
+
+------------------------------------------------------
+NIST Authenticated NTP Service
+
+[Link](https://www.nist.gov/pml/time-and-frequency-division/time-services/nist-authenticated-ntp-service)

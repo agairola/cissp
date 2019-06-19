@@ -70,13 +70,15 @@ Team should perform assessment of the resources required by the BCP effort. This
 
 It’s important to realize that there are two different types of analyses that business planners use when facing a decision.
 
-
 **Quantitative decision-making** Quantitative decision-making involves the use of numbers and formulas to reach a decision. This type of data often expresses options in terms of the dollar value to the business.
 
 **Qualitative decision-making** Qualitative decision-making takes non-numerical factors, such as reputation, investor/customer confidence, workforce stability, and other concerns, into account. This type of data often results in categories of prioritization (such as high, medium, and low).
 
 A good plan = Quantitative + Qualitative
 
+```
+Pretty good link: https://defaultreasoning.com/2013/12/10/rpo-rto-wrt-mtdwth/
+```
 ### IDENTIFY PRIORITIES
 
 * The priority identification task, or criticality prioritization, involves creating a comprehensive list of business processes and ranking them in order of importance.
