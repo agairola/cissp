@@ -314,13 +314,43 @@ However, most SSO systems include methods to protect user credentials. The follo
 #### Kerberos
 
   * Current version - Kerberos 5
+  
   * Kerberos 5, relies on symmetric-key cryptography (also known as secret-key cryptography) using the Advanced Encryption Standard (AES) symmetric encryption protocol.
-  * *Kerberos Authentication Server*  The authentication server hosts the functions of the KDC: a ticket-granting service (TGS) and an authentication service (AS). However, it is possible to host the ticket-granting service on another server. The authentication service verifies or rejects the authenticity and timeliness of tickets. This server is often called the *Key Distribution Center (KDC)*.
+  
+  * *Kerberos Authentication Server*  The authentication server hosts the functions of the KDC: a `ticket-granting service (TGS)` and an `authentication service (AS)`. However, it is possible to host the ticket-granting service on another server. The authentication service verifies or rejects the authenticity and timeliness of tickets. This server is often called the *Key Distribution Center (KDC)*.
+
+  * *Ticket-Granting Ticket* provides proof that a subject has authenticated through a KDC and is authorized to request tickets to access other objects. A TGT is encrypted and includes a symmetric key, an expiration time, and the user’s IP address. Subjects present the TGT when requesting tickets to access objects.	
 
   ![alt text](kerborosewhiteboard.jpg)
 
   13min Videos explaining Kerberos  - [link](https://www.cybrary.it/s3ss10n/kerberos-in-depth/)
 
+  * *Ticket* is an encrypted message that provides proof that a subject is authorized to access an object. It is sometimes called a `service ticket (ST)`.  Subjects request tickets to access objects, and if they have authenticated and are authorized to access the object, Kerberos issues them a ticket. Kerberos tickets have specific lifetimes and usage parameters. 
+
+  * The Kerberos logon process works as follows:
+
+    * The user types a `username and password` into the client.
+    * The `client encrypts` the `username` with AES for transmission to the KDC.
+    * The `KDC` verifies the username against a database of known credentials.
+    * The KDC generates a symmetric key that will be used by the client and the Kerberos server. It encrypts this with a hash of the user’s password. The KDC also generates an encrypted `time-stamped TGT`.
+    * The KDC then transmits the encrypted symmetric key and the encrypted time-stamped TGT to the client.
+    * The client installs the TGT for use until it expires. The `client also decrypts the symmetric key using a hash of the user’s password`.
+
+  > Note that the client’s password is never transmitted over the network, but it is verified. The server encrypts a symmetric key using a hash of the user’s password, and it can only be decrypted with a hash of the user’s password.
+
+  * When a client wants to access an object, such as a resource hosted on the network, it must request a ticket through the Kerberos server. The following steps are involved in this process:
+
+    * The client sends its `TGT` back `to` the `KDC` with a request for access to the resource.
+    * The KDC verifies that the TGT is valid and checks its access control matrix to verify that the user has sufficient privileges to access the requested resource.
+    * The KDC generates a `service ticket` and sends it to the client.
+    * The client sends the ticket to the server or service hosting the resource.
+    * The server or service hosting the resource `verifies` the validity of the ticket `with` the `KDC`.
+    * Once identity and authorization is verified, Kerberos activity is complete. The server or service host then opens a session with the client and begins communications or data transmission.
+
+  * Kerberos presents a single point of failure—the KDC.
+
+  * All systems be time-synchronized within five minutes of each other. 
+  
 #### Federated Identity Management and SSO
 
   * Many cloud-based applications use federated identity management (FIM), which is a form of SSO.
