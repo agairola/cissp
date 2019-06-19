@@ -314,6 +314,7 @@ However, most SSO systems include methods to protect user credentials. The follo
 #### Kerberos
 
   * Current version - Kerberos 5
+  * Kerberos 5, relies on symmetric-key cryptography (also known as secret-key cryptography) using the Advanced Encryption Standard (AES) symmetric encryption protocol.
   * *Kerberos Authentication Server*  The authentication server hosts the functions of the KDC: a ticket-granting service (TGS) and an authentication service (AS). However, it is possible to host the ticket-granting service on another server. The authentication service verifies or rejects the authenticity and timeliness of tickets. This server is often called the *Key Distribution Center (KDC)*.
 
   ![alt text](kerborosewhiteboard.jpg)
@@ -344,6 +345,12 @@ However, most SSO systems include methods to protect user credentials. The follo
   * **OpenID** OpenID is also an open standard.  It provides decentralized authentication, allowing users to log into multiple unrelated websites with one set of credentials maintained by a third-party service referred to as an OpenID provider. When users go to an OpenID-enabled website (also known as a Relying Party), they are prompted to provide their OpenID identity as a uniform resource locator (URL). The two sites exchange data and create a secure channel. The user is then redirected to the OpenID provider and is prompted to provide the password. If correct, the user is redirected to the OpenID-enabled site.
 
   * **OpenID** Connect OpenID Connect is an authentication layer using the OAuth 2.0 framework. It builds on the technologies created with OpenID but uses a JavaScript Object Notation (JSON) Web Token (JWT), also called an ID token. OpenID Connect uses a Representational State Transfer (REST)–compliant web service to retrieve the JWT. In addition to providing authentication, the JWT can also include provide profile information about the user.
+
+```
+Simple explanation of OpenID Connect and OAuth 2.0 flow:
+
+https://www.youtube.com/watch?v=LyqeHAkxVyk&t=4s
+```
 
   * **Scripted Access** Scripted access or logon scripts establish communication links by providing an automated process to transmit logon credentials at the start of a logon session.
 
