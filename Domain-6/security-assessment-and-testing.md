@@ -286,7 +286,9 @@ Modern application handoffs between separately developed modules and use well-de
 Three types of interfaces should be tested during the software testing process:
 
 **Application Programming Interfaces (APIs)**
+
 **User Interfaces (UIs)** `GUIs` `CLI`
+
 **Physical Interfaces**
 
 #### Misuse Case Testing
@@ -313,7 +315,7 @@ The test coverage analysis formula may be adapted to use many different criteria
 
 Two different forms:
 
-* *Passive monitoring* analyzes actual network traffic sent to a website by capturing it as it travels over the network or reaches the server. *Real user monitoring (RUM)*is a variant of passive monitoring where the monitoring tool reassembles the activity of individual users to track their interaction with a website.
+* *Passive monitoring* analyzes actual network traffic sent to a website by capturing it as it travels over the network or reaches the server. *Real user monitoring (RUM)* is a variant of passive monitoring where the monitoring tool reassembles the activity of individual users to track their interaction with a website.
 
 * *Synthetic monitoring (or active monitoring)* performs artificial transactions against a website to assess performance. This may be as simple as requesting a page from the site to determine the response time, or it may execute a complex script designed to identify the results of a transaction.
 

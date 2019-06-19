@@ -97,3 +97,19 @@ Digital Identity Guidelines - Authentication and Lifecycle Management
 [Link](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf)
 
 ------------------------------------------------------
+NIST Special Publication 800-53A
+Assessing Security and Privacy Controls in Federal Information Systems and Organizations
+
+[Link](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53Ar4.pdf)
+
+------------------------------------------------------
+OWASP Testing Guide, Open Source Security Testing Methodology Manual (OSSTMM), NIST 800-115 (Technical Guide to Information Security Testing and Assessment), FedRAMP Penetration Test Guidance, PCI DSS
+
+`Penetration Testing`
+
+[OWASP Testing Guide](https://www.owasp.org/index.php/OWASP_Testing_Guide_v4_Table_of_Contents)
+[OSSTMM](http://www.isecom.org/research/)
+[NIST 800-115](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-115.pdf)
+[FedRAMP Penetration Test Guidance](https://www.fedramp.gov/assets/resources/documents/CSP_Penetration_Test_Guidance.pdf)
+[PCI DSS](https://www.pcisecuritystandards.org/pci_security/)
+------------------------------------------------------
