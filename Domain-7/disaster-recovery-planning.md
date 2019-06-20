@@ -111,6 +111,10 @@ A common way that fault tolerance and system resilience is added for computers i
 
 Software-based RAID is inexpensive to implement, but can reduce overall system performance.
 
+```
+Useful Video - https://www.youtube.com/watch?v=U-OCdTeZLac
+```
+
 ### Protecting Servers
 
 Fault tolerance can be added for critical servers with *failover* clusters. Below images shows multiple components put together to provide reliable web access for a heavily accessed website that uses a database.
@@ -128,9 +132,13 @@ Fault tolerance can be added for power sources with an *uninterruptible power su
 Fluctuations in commercial power is problem, which include:
 
 *Spike* is a quick instance of an increase in voltage.
+
 *Sag* is a quick instance of a reduction in voltage. 
+
 *Surge* is when power stays high for a long period of time.
+
 *Brownout* is when power remains low for a long period of time.
+
 *Transients* is when occasionally power lines have noise on them.
 
 *Useful*: `very basic UPS` for surge protection and battery backup. `Line-interactive UPS` includes variable-voltage transformer and battery backup.
