@@ -158,3 +158,34 @@ Minimum Security Requirements for Federal Information and Information Systems, m
 NIST Authenticated NTP Service
 
 [Link](https://www.nist.gov/pml/time-and-frequency-division/time-services/nist-authenticated-ntp-service)
+
+------------------------------------------------------
+Professional Practices 
+
+BCI Good Practices Guideline 
+
+ISO 27001  
+
+NIST Special Publication 800-34
+
+`Recovery Plan Development`
+
+[Professional Practices](https://drii.org/resources/professionalpractices/EN)
+
+[BCI Good Practices Guideline](https://www.thebci.org/training-qualifications/good-practice-guidelines.html)
+
+[ISO 27001 NIST](https://www.iso.org/isoiec-27001-information-security.html)
+
+[NIST Special Publication 800-34](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf)
+
+------------------------------------------------------
+NIST Special Publication 800-86
+Guide to Integrating Forensic Techniques into Incident Response
+
+`Evidence Collection`
+
+[Link](https://www.nist.gov/publications/guide-integrating-forensic-techniques-incident-response)
+
+
+
+
