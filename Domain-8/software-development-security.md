@@ -285,21 +285,184 @@ From security perspective:
   * Keep track of security bulletins and patches that correct newly discovered vulnerabilities.
   * In SaaS environments, security professionals should monitoring the vendor’s security via audits, assessments, vulnerability scans, and other measures designed to verify that the vendor maintains proper controls.
 
---------------
-# Complete this 
-
 ### Establishing Databases and Data Warehousing
 
 #### Database Management System Architecture
 
+Vast majority of contemporary systems implement a technology known as *relational database management systems (RDBMSs)*.
+
 **Hierarchical and Distributed Databases**
+
+* Hierarchical data model: `logical tree structure` `one-to-many data model`
+
+![alt text](Hierarchicaldatamodel.jpg)
+
+* Other examples of hierarchical data models include the NCAA March Madness bracket system and the hierarchical distribution of Domain Name System (DNS) records used on the internet. 
+
+* Distributed data model has data stored in more than one database, but those databases are logically connected. 
+
+* The data mapping relationship for distributed databases is many-to-many.
 
 **Relational Databases**
 
-**DATABASE TRANSACTIONS**
+* A relational database consists of flat two-dimensional tables made up of rows and columns. 
+
+* one-to-one data relationship
+
+* The number of rows in the relation is referred to as *cardinality*, and the number of columns is the *degree*. 
+
+![alt text](relationaldatabase.jpg)
+
+In this example, the table has a cardinality of 3 (corresponding to the three rows in the table) and a degree of 8 (corresponding to the eight columns). 
+
+*  The *domain* of an attribute is the set of allowable values that the attribute can take.
+
+> To remember the concept of cardinality, think of a deck of cards on a desk, with each card (the first four letters of cardinality) being a row. To remember the concept of degree, think of a wall thermometer as a column (in other words, the temperature in degrees as measured on a thermometer).
+
+* Records are identified using a variety of *keys*. Quite simply, keys are a subset of the fields of a table and are used to uniquely identify records. 
+
+* **Candidate Keys** A candidate key is a subset of attributes that can be used to uniquely identify any record in a table. No two records in the same table will ever contain the same values for all attributes composing a candidate key. Each table may have one or more candidate keys, which are chosen from column headings.
+
+* **Primary Keys** A primary key is selected from the set of candidate keys for a table to be used to uniquely identify the records in a table. Each table has only one primary key, selected by the database designer from the set of candidate keys. The RDBMS enforces the uniqueness of primary keys by disallowing the insertion of multiple records with the same primary key. Example, Customer ID would likely be the primary key.
+
+* **Foreign Keys** A foreign key is used to enforce relationships between two tables, also known as `referential integrity`. Referential integrity ensures that if one table contains a foreign key, it corresponds to a still-existing primary key in the other table in the relationship. It makes certain that no record/tuple/row contains a reference to a primary key of a nonexistent record/tuple/row. Example, Sales Rep field shown is a foreign key referencing the primary key of the Sales Reps table.
+
+* Database normalization:
+
+Database developers strive to create well-organized and efficient databases. To assist with this effort, they’ve defined several levels of database organization known as `normal forms`. The process of bringing a database table into compliance with normal forms is known as *normalization*.
+
+Three most common are `first normal form (1NF), second normal form (2NF), and third normal form (3NF)`. Each of these forms adds requirements to reduce redundancy in the tables, eliminating misplaced data and performing a number of other housekeeping tasks. 
+
+* SQL itself is divided into two distinct components: the `Data Definition Language (DDL),` which allows for the creation and modification of the database’s structure (known as the `schema`), and the `Data Manipulation Language (DML)`, which allows users to interact with the data contained within that schema.
+
+#### Database Transaction
+
+Each transaction is a discrete set of SQL instructions that will either succeed or fail as a group. You might use the following SQL code to first add $250 to account 1001 and then subtract $250 from account 2002:
+
+```
+BEGIN TRANSACTION
+UPDATE accounts
+SET balance = balance + 250
+WHERE account_number = 1001;
+ 
+UPDATE accounts
+SET balance = balance – 250
+WHERE account_number = 2002
+ 
+END TRANSACTION
+```
+
+When a transaction successfully finishes, it is said to be committed to the database and cannot be undone. Transaction committing may be explicit, using SQL’s `COMMIT` command, or it can be implicit if the end of the transaction is successfully reached. If a transaction must be aborted, it can be rolled back explicitly using the `ROLLBACK` command or implicitly if there is a hardware or software failure. 
+
+All database transactions have four required characteristics: atomicity, consistency, isolation, and durability. Together, these attributes are known as the *ACID model*
+
+**Atomicity** Database transactions must be atomic—that is, they must be an “all-or-nothing” affair.
+
+**Consistency** All transactions must begin (or complete) operating in an environment that is consistent with all of the database’s rules (for example, all records have a unique primary key).
+
+**Isolation** If a database receives two SQL transactions that modify the same data, one transaction must be completed in its entirety before the other transaction is allowed to modify the same data.
+
+**Durability** Database transactions must be durable. That is, once they are committed to the database, they must be preserved. Databases ensure durability through the use of backup mechanisms, such as transaction logs.
 
 #### Security for multilevel databases
 
-#### Open Database Connectivity 
+* Multilevel security databases contain information at a number of different classification levels
 
+* Mixing data with different classification levels and/or need-to-know requirements is known as *database contamination* and is a significant security challenge.
 
+* Administrators will deploy a trusted front end to add multilevel security to a legacy or insecure DBMS and another method is to use `database views`. 
+
+**Concurrency** 
+
+Concurrency, or edit control, is a preventive security mechanism that endeavors to make certain that the information stored in the database is always correct or at least has its integrity and availability protected. This feature can be employed on a single-level or multilevel database.
+
+Databases that fail to implement concurrency correctly may suffer from the following issues:
+
+*Lost updates* occur when two different processes make updates to a database unaware of each other’s activity
+*Dirty reads* occur when a process reads a record from a transaction that did not successfully commit.
+
+Concurrency uses a `“lock”` feature to allow one user to make changes but deny other users access to views or make changes to data elements at the same time. 
+
+In some instances, administrators will use concurrency with auditing mechanisms to track document and/or field changes. When this recorded data is reviewed, concurrency becomes a `detective control`.
+
+#### Other Security Mechanisms
+
+*Semantic integrity* ensures that user actions don’t violate any structural rules. It also checks that all stored data types are within valid domain ranges, ensures that only logical values exist, and confirms that the system complies with any and all uniqueness constraints.
+
+Employ *time and date* stamps to maintain data integrity and availability.
+
+Objects can be controlled granularly within the database; this can also improve security control. `Content-dependent access control` is an example of granular object control. ` increases processing overhead`.  Another form of granular control is *cell suppression*. Cell suppression is the concept of hiding individual database fields or cells or imposing more security restrictions on them.
+
+Employ *database partitioning* to subvert aggregation and inference vulnerabilities.
+
+*Polyinstantiation*, in the context of databases, occurs when two or more rows in the same relational database table appear to have identical primary key elements but contain different data for use at differing classification levels
+
+Finally, administrators can insert false or misleading data into a DBMS in order to redirect or thwart information confidentiality attacks. This is a concept known as *noise and perturbation*.
+
+### Open Database Connectivity 
+
+Open Database Connectivity (ODBC) acts as a proxy between applications and backend database drivers, giving application programmers greater freedom in creating solutions without having to worry about the backend database system:
+
+![alt text](ODBC.jpg)
+
+### NOSQL
+
+NoSQL databases are a class of databases that use models other than the relational model to store data.
+
+These are the three major classes of NoSQL database:
+
+* *Key/value stores*
+* *Graph databases*
+* *Document stores* Common document types used in document stores include Extensible Markup Language (XML) and JavaScript Object Notation (JSON).
+
+## Storing Data and Information
+
+### Types of Storage
+
+* *Primary (or “real”) memory* `volatile` `random-access memory (RAM)`
+* *Secondary storage* `nonvolatile` `magnetic and optical media (CD, DVD etc)`
+* *Virtual memory* `simulate additional primary memory`
+* *Virtual storage*  `simulate secondary storage resources`
+* *Random access storage*  allows the operating system to request contents from any point within the media. `RAM and hard drives`
+* *Sequential access storage* requires scanning through the entire media from the beginning to reach a specific address. `magnetic tape`
+* *Volatile storage* loses its contents when power is removed from the resource
+* *Nonvolatile storage* does not depend upon the presence of power to maintain its contents.
+
+### Storage threat
+
+* The threat of illegitimate access to storage. 
+* fail-safe controls
+* encrypted filesystem
+* Example, AWS S3 exposure 
+* Covert channel attacks pose the second primary threat against data storage resources. 
+
+## Understanding Knowledge-Based Systems
+
+The following sections examine two types of knowledge-based artificial intelligence systems: expert systems and neural networks. We’ll also take a look at their potential applications to computer security problems.
+
+### Expert Systems
+
+* Expert systems seek to embody the accumulated knowledge of experts on a particular subject and apply it in a consistent fashion to future decisions.
+* Two main components: the knowledge base and the inference engine.
+* The `knowledge base` contains the rules known by an expert system. The knowledge base seeks to codify the knowledge of human experts in a series of “if/then” statements.
+* The `inference engine`—analyzes information in the knowledge base to arrive at the appropriate decision.
+* Expert systems are not infallible—they’re only as good as the data in the knowledge base and the decision-making algorithms implemented in the inference engine.
+
+### Machine Learning 
+
+* Machine learning techniques use analytic capabilities to develop knowledge from datasets without the direct application of human insight.
+* Two major categories:
+
+  * *Supervised learning* techniques use labeled data for training. The analyst creating a machine learning model provides a dataset along with the correct answers and allows the algorithm to develop a model that may then be applied to future cases.
+
+  * *Unsupervised learning* techniques use unlabeled data for training. The dataset provided to the algorithm does not contain the “correct” answers; instead, the algorithm is asked to develop a model independently.
+
+### Neural Networks
+
+* In a neural network, a long chain of computational decisions that feed into each other and eventually sum to produce the desired output is set up. Neural networks are an extension of machine learning techniques and are also commonly referred to as *deep learning* or cognitive systems.
+
+`Delta rule or learning rule`
+
+### Security Applications
+
+Knowledge-based analytic techniques have great applications in the field of computer security. One of the major advantages offered by these systems is their capability to rapidly make consistent decisions. One of the major problems in computer security is the inability of system administrators to consistently and thoroughly analyze massive amounts of log and audit trail data to look for anomalies
